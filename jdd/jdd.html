@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聚点点</title>
+    <link rel="stylesheet" type="text/css" href="css/jdd.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jdd.js"></script>
+</head>
+<body>
+    <!--=======-------------header------------------------>
+    <div id="header" class="clear">
+        <div class="content">
+            <div class="head-left fl">
+                <div class="fav fl"><a href="javascript:;"><img src="img/star.png"  class="unturn">收藏聚点点移动分销商城</a></div>
+                <div class="subnav fl">
+                    <span>您好，欢迎来到</span>
+                    <span class="a1"><a href="javascript:;">聚点点移动分销商城</a></span>
+                    <span class="a1"><a href="login.html">[登录]</a></span>
+                    <span class="a1"><a href="javascript:;">[注册]</a></span>
+                    <span class="manage"><a href="javascript:;" class="iconfont">&#xe607;商城管理中心</a></span>
+                    <span class="enter"><a href="javascript:;" class="iconfont">&#xe602;商家入驻中心</a></span>
+                </div>
+            </div>
+
+            <div class="head-right fr">
+                <ul>
+                    <li class="first hidebox">
+                        <a href="javascript:;">手机版</a>
+                        <div class="hide">
+                            <div class="qrcode"><img src="img/app.png"></div>
+                            <div class="choose">
+                                <h4>扫描二维码</h4>
+                                <p>下载手机客户端</p>
+                                <div>
+                                    <a href="javascript:;" class="type1">Android</a>
+                                    <a href="javascript:;" class="type2">iPhone</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="hidebox">
+                        <a href="javascript:;">我的订单<i></i></a>
+                        <div class="hide">
+                            <ul>
+                                <li><a href="javascript:;">待付款订单</a></li>
+                                <li><a href="javascript:;">待确认收货</a></li>
+                                <li><a href="javascript:;">待评价交易</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hidebox">
+                        <a href="javascript:;">我的收藏<i></i></a>
+                        <div class="hide">
+                            <ul>
+                                <li><a href="javascript:;">商品收藏</a></li>
+                                <li><a href="javascript:;">店铺收藏</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hidebox">
+                        <a href="javascript:;">客户服务<i></i></a>
+                        <div class="hide">
+                            <ul>
+                                <li><a href="javascript:;">帮助中心</a></li>
+                                <li><a href="javascript:;">售后服务</a></li>
+                                <li><a href="javascript:;">客服中心</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------subbanner----------------------->
+    <div id="subbanner">
+        <div class="content">
+            <a href="javascript:;"><img src="img/subbanner.jpg"></a><a href="javascript:;" class="close1"><img src="img/close.png"></a>
+        </div>
+    </div>
+
+    <!-----------------------logo-------------------------->
+    <div id="logo">
+        <div class="content">
+            <div class="logoimg fl"><a href="javascript:;"><img src="img/logo.png"></a></div>
+            <div class="wrap fl">
+                <div class="searchbox">
+                    <div class="tab fl">
+                        <a href="javascript:;" class="active">商品</a>
+                        <a href="javascript:;" class="a2">店铺</a>
+                    </div>
+                    <form class="search fl">
+                        <input type="text" name="tx" value="" placeholder="请输入您要搜索的商品关键字或店铺名称" id="tx" autocomplete="off">
+                        <input type="button" name="btn" value="搜索" id="btn">
+                        <ul id="searchlist"></ul>
+                    </form>
+                </div>
+                <ul class="hotsearch">
+                    <li class="first">热门搜索：</li>
+                    <li><a href="javascript:;">电子商务</a></li>
+                    <li><a href="javascript:;">聚点点</a></li>
+                    <li><a href="javascript:;">JDDShop</a></li>
+                </ul>
+            </div>
+            <div class="shop-cart fr">
+                <div class="myshop fl">
+                    <a href="javascript:;"><i></i><span>我的商城</span><b></b></a>
+                    <div class="hide">
+                        <div class="myinfo">
+                            <a href="javascript:;">我的用户中心<i></i></a>
+                        </div>
+                        <ul class="clear">
+                            <li class="left"><a href="javascript:;">站内消息(0)</a></li>
+                            <li class="right"><a href="javascript:;">我的订单<i></i></a></li>
+                            <li class="left"><a href="javascript:;">咨询回复(0)</a></li>
+                            <li class="right"><a href="javascript:;">我的收藏<i></i></a></li>
+                            <li class="left"><a href="javascript:;">代金券(0)</a></li>
+                            <li class="right"><a href="javascript:;">我的积分<i></i></a></li>
+                        </ul>
+                        <div class="history">
+                            <p><span>最近浏览的商品</span><a href="javascript:;">全部浏览历史</a></p>
+                            <ul>
+                                <li>暂无商品</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mycart fl">
+                    <a href="javascript:;"><i></i><span>购物车结算</span><b></b></a>
+                    <div class="hide">
+                        <h4>最近加入的商品</h4>
+                        <div class="box1">您的购物车中暂无商品，赶快选择心爱的商品吧！</div>
+                        <div class="box2 clear"><a href="javascript:;">计算购物车中的商品</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- **********************nav部分************** -->
+    <div id="nav">
+        <div class="content">
+            <div class="fl menu">
+                <p class="p">所有商品分类</p>
+                <div class="menu-left">
+                    <ul>
+                        <li class="li-one">
+                            <h5>特产优连</h5>
+                            <p><a href="javascript:;">饼干蛋糕</a><a href="javascript:;">糖果巧克力</a></p>
+                        </li>
+                        <li class="li-two">
+                            <h5>数码办公</h5>
+                            <p><a href="javascript:;">手机电池</a><a href="javascript:;">蓝牙耳机</a></p>
+                        </li>
+                        <li class="li-one">
+                            <h5>服饰鞋帽</h5>
+                            <p><a href="javascript:;">T恤</a><a href="javascript:;">衬衫</a><a href="javascript:;">针织衫</a><a href="javascript:;">雪纺衫</a></p>
+                        </li>
+                        <li class="li-two">
+                            <h5>美容珠宝</h5>
+                            <p><a href="javascript:;">洁面乳</a><a href="javascript:;">爽肤水</a><a href="javascript:;">精华露</a></p>
+                        </li>
+                        <li class="li-one">
+                            <h5>居家生活</h5>
+                            <p><a href="javascript:;">床品件套</a><a href="javascript:;">被子</a><a href="javascript:;">枕芯枕套</a></p>
+                        </li>
+                        <li class="li-two">
+                            <h5>母婴用品</h5>
+                            <p><a href="javascript:;">品牌奶粉</a><a href="javascript:;">妈妈奶粉</a><a href="javascript:;">1段奶粉</a></p>
+                        </li>
+                        <li class="li-one">
+                            <h5>生活健康</h5>
+                            <p><a href="javascript:;">户外服装</a><a href="javascript:;">户外鞋袜</a></p>
+                        </li>
+                        <li class="li-two">
+                            <h5>虚拟充值</h5>
+                            <p><a href="javascript:;">手机充值</a><a href="javascript:;">游戏点卡</a><a href="javascript:;">QQ充值</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="fl">
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">抢购</a></li>
+                <li><a href="javascript:;">品牌</a></li>
+                <li><a href="javascript:;">积分中心</a></li>
+                <li><a href="javascript:;">专题</a></li>
+                <li><a href="javascript:;">物流</a></li>
+                <li><a href="javascript:;">资讯</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- *************************banner部分*********** -->
+    <div id="banner">
+        <div class="banner-img">
+            <ul>
+                <li class='banner-img1'><a href="javascript:;"><img src="img/banner_1.png" alt=""></a></li>
+                <li class='banner-img2'><a href="javascript:;"><img src="img/banner_2.png" alt=""></a></li>
+                <li class='banner-img3'><a href="javascript:;"><img src="img/banner_3.png" alt=""></a></li>
+                <li class='banner-img4'><a href="javascript:;"><img src="img/banner_4.png" alt=""></a></li>
+                <li class='banner-img5'><a href="javascript:;"><img src="img/banner_5.png" alt=""></a></li>
+            </ul>
+
+            <div class="btn-list">
+                <a href="javascript:;" class="b-active"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+
+        <div class="banner-bot">
+            <ul class="babo-list">
+                <li><a href="javascript:;"><img src="img/banner_bot1.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot2.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot3.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot4.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot5.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot6.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot7.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot8.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="img/banner_bot9.png" alt=""></a></li>
+            </ul>
+        </div>
+
+        <div class="banner-rg">
+            <div class="ensure">
+                <ul>
+                    <li class="sure1">七天包退</li>
+                    <li class="sure2">正品保障</li>
+                    <li class="sure3">闪电发货</li>
+                </ul>
+            </div>
+            <div class="proclamation">
+                <ul class="tabnav">
+                    <li class="zs select">招商入驻</li>
+                    <li class="gg">商城公告</li>
+                </ul>
+                <div class="con con1">
+                    <a href="javascript:;" class="a1"></a>
+                    <a href="javascript:;" class="a2">登录商家管理中心</a>
+                </div>
+                <div class="con con2">
+                    <ul class="clear">
+                        <li><i></i><a href="javascript:;">火爆销售中 </a><span>(2014-01-16)</span> </li>
+                        <li><i></i><a href="javascript:;">功能使用说明 </a><span>(2014-01-16)</span> </li>
+                        <li><i></i><a href="javascript:;">管理功能说明 </a><span>(2014-01-16)</span> </li>
+                        <li><i></i><a href="javascript:;">提示信息 </a><span>(2014-01-16)</span> </li>
+                        <li><i></i><a href="javascript:;">如何扩充水印字体库 </a><span>(2014-01-16)</span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------main部分----------------->
+    <div id="main">
+        <div class="content clear">
+            <!--------------main1-------------->
+            <div class="main1 clear">
+                <div class="tab-nav">
+                    <ul>
+                        <li class="hover first">
+                            <i class="arrow"></i>
+                            <h3>热卖商品</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>疯狂抢购</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>猜您喜欢</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>热评商品</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>新品上架</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-panel">
+                    <ul class="fruitlist active">
+                        <li class="first">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                             </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food3.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food4.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food5.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="fruitlist">
+                        <li class="first">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food6.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food7.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food8.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="fruitlist">
+                        <li class="first">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food4.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food7.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food5.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food6.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="fruitlist">
+                        <li class="first">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food3.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food7.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="fruitlist">
+                        <li class="first">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food5.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food4.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food3.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food8.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="itemimg"><a href="javascript:;"><img src="img/food7.jpg"></a></div>
+                            <div class="info">
+                                <p class="dec"><a href="javascript:;">新鲜水果攀枝花芒果 大凯特芒果 现摘现发</a></p>
+                                <p class="price"><span>商城价：</span><b>￥80.00</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!---------------生活的橱窗----------->
+            <div class="life-window clear">
+                <div class="theme"><img src="img/home.png"></div>
+                <div class="showcase">
+                    <ul>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good1.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">伊登（Yeelight）BUL27BL0101 Yeelight Blue II LED多彩智能灯泡</a></p>
+                                <span class="goodsprice">商城价：<b>0.01</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good2.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">咪咕(MIGU) 音乐盒 家庭智能娱乐 唱响互联家生活</a></p>
+                                <span class="goodsprice">商城价：<b>399.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good3.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">联想（Lenovo）智能乐手环（橙色）智能蓝牙佩戴设备</a></p>
+                                <span class="goodsprice">商城价：<b>560.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good4.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">Apple MacBook Air Z0NZ002C6 13.3英寸宽屏笔记本电脑</a></p>
+                                <span class="goodsprice">商城价：<b>7600.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good5.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">伊登（Yeelight）BUL27BL0101 Yeelight Blue II LED多彩智能灯泡</a></p>
+                                <span class="goodsprice">商城价：<b>78.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good6.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">伊登（Yeelight）BUL27BL0101 Yeelight Blue II LED多彩智能灯泡</a></p>
+                                <span class="goodsprice">商城价：<b>450.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good7.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">伊登（Yeelight）BUL27BL0101 Yeelight Blue II LED多彩智能灯泡</a></p>
+                                <span class="goodsprice">商城价：<b>58.00</b></span>
+                            </div>
+                        </li>
+                        <li class="showbox">
+                            <a href="javascript:;" class="goodsimg"><img src="img/good4.jpg"></a>
+                            <div class="info">
+                                <p class="goodsname"><a href="javascript:;">伊登（Yeelight）BUL27BL0101 Yeelight Blue II LED多彩智能灯泡</a></p>
+                                <span class="goodsprice">商城价：<b>39.00</b></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-------------1F 特产优联------------>
+            <div class="floor1 floor tcyl">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>1F</span><h2>特产优联</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/type1.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">进口食品</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">地方特产</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">休闲食品</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">粮油调味</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">中外名酒</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">饮料冲调</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">营养健康</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">亚健康调理</a></li>
+                            <li class="left"><a href="javascript:;" title="健康礼品" target="_blank">健康礼品</a></li>
+                            <li><a href="javascript:;" title="生鲜食品" target="_blank">生鲜食品</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads1">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>特产优联</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel1">
+                        <a href="javascript:;" class="a1">
+                            <img src="img/part1.jpg" alt=""></a>
+                        <a href="javascript:;" class="a2">
+                            <img src="img/part2.jpg" alt=""></a>
+                        <a href="javascript:;" class="a3">
+                            <img src="img/part3.jpg"  alt=""></a>
+                        <a href="javascript:;" class="a4">
+                            <img src="img/part4.jpg" alt=""></a>
+                        <a href="javascript:;" class="a5">
+                            <img src="img/part5.jpg" alt=""></a>
+                        <a href="javascript:;" class="a6">
+                            <img src="img/part6.jpg" alt=""></a>
+                        <a href="javascript:;" class="a7">
+                            <img src="img/part9.jpg" alt=""></a>
+                        <a href="javascript:;" class="a8">
+                            <img src="img/part7.jpg" alt=""></a>
+                        <a href="javascript:;" class="a9">
+                            <img src="img/part8.jpg" alt=""></a>
+                    </div>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/food8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist1 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus1">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/a1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------2F  电脑数码----------->
+            <div class="floor2 floor dnsm">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>2F</span><h2>电脑数码</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/f2.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">手机配件</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">摄影摄影</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">数码配件</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">时尚影音</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">电脑整机</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">电脑配件</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">外设产品</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">网络产品</a></li>
+                            <li class="left"><a href="javascript:;" title="健康礼品" target="_blank">办公打印</a></li>
+                            <li><a href="javascript:;" title="生鲜食品" target="_blank">办公文仪</a></li>
+                            <li class="left"><a href="javascript:;" title="生鲜食品" target="_blank">手机通讯</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads2">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>电脑数码</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel1">
+                        <a href="javascript:;" class="a1">
+                            <img src="img/ls1.jpg" alt=""></a>
+                        <a href="javascript:;" class="a2">
+                            <img src="img/ls2.jpg" alt=""></a>
+                        <a href="javascript:;" class="a3">
+                            <img src="img/ls3.jpg"  alt=""></a>
+                        <a href="javascript:;" class="a4">
+                            <img src="img/ls4.jpg" alt=""></a>
+                        <a href="javascript:;" class="a5">
+                            <img src="img/ls5.jpg" alt=""></a>
+                        <a href="javascript:;" class="a6">
+                            <img src="img/ls6.jpg" alt=""></a>
+                        <a href="javascript:;" class="a7">
+                            <img src="img/ls7.jpg" alt=""></a>
+                        <a href="javascript:;" class="a8">
+                            <img src="img/ls8.jpg" alt=""></a>
+                        <a href="javascript:;" class="a9">
+                            <img src="img/ls9.jpg" alt=""></a>
+                    </div>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist2 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus2">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/a1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------3F 服饰鞋包-------------->
+            <div class="floor3 floor fsxb">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>3F</span><h2>服饰鞋包</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/xie.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">女装</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">男装</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">内衣</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">运动</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">女鞋</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">男鞋</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">配饰</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">童装</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads3">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>服饰鞋包</h3>
+                        </li>
+                        <li>
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel1">
+                        <a href="javascript:;" class="a1">
+                            <img src="img/car1.jpg" alt=""></a>
+                        <a href="javascript:;" class="a2">
+                            <img src="img/car2.jpg" alt=""></a>
+                        <a href="javascript:;" class="a3">
+                            <img src="img/car3.jpg"  alt=""></a>
+                        <a href="javascript:;" class="a4">
+                            <img src="img/car4.jpg" alt=""></a>
+                        <a href="javascript:;" class="a5">
+                            <img src="img/car5.jpg" alt=""></a>
+                        <a href="javascript:;" class="a6">
+                            <img src="img/car6.jpg" alt=""></a>
+                        <a href="javascript:;" class="a7">
+                            <img src="img/car7.jpg" alt=""></a>
+                        <a href="javascript:;" class="a8">
+                            <img src="img/car8.jpg" alt=""></a>
+                        <a href="javascript:;" class="a9">
+                            <img src="img/car9.jpg" alt=""></a>
+                    </div>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/sm8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist3 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus3">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-----------4F 美容珠宝--------------->
+            <div class="floor4 floor mrzb">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>4F</span><h2>美容珠宝</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/type1.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">面部护理</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">身体护理</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">口腔护理</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">女士护理</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">男士护理</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">魅力彩妆</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">香水SPA</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">时尚饰品</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">纯金K金饰品</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">金银投资</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">银饰</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">钻石饰品</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads4">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/mei8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist4 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus4">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------5F 居家生活----------------->
+            <div class="floor5 floor jjsh">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>5F</span><h2>居家生活</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/f2.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">家纺</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">灯具</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">生活日用</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">家装软饰</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">清洁日用</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">宠物生活</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads5">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/life8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist5 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus5">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------6F 母婴玩具------------------>
+            <div class="floor6 floor mywj">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>6F</span><h2>母婴玩具</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/baby.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">奶粉</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">营养辅食</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">尿裤湿巾</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">喂养用品</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">洗护用品</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">童车童床</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">服饰寝居</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">妈妈专区</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">适用年龄</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">遥控/电动</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">毛绒布艺</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">娃娃玩具</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads6">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/baby8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist6 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus6">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-----------7F 食品保健----------------->
+            <div class="floor7 floor spbj">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>7F</span><h2>食品保健</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/jiu.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">户外鞋服</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">户外装备</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">运动器械</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">纤体瑜伽</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">体育娱乐</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">烹饪锅具</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">刀剪菜板</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">收纳保鲜</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">水具酒具</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">餐具</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">茶具/咖啡具</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads7">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/bj8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist7 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus7">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------8F 图书音像---------------->
+            <div class="floor8 floor tsyx">
+                <div class="left-ads">
+                    <div class="title">
+                        <span>8F</span><h2>图书音像</h2>
+                    </div>
+                    <div class="spec">
+                        <a href="javascript:;"><img src="img/hua.jpg"></a>
+                    </div>
+                    <div class="kinds">
+                        <ul>
+                            <li class="left"><a href="javascript:;" title="进口食品" target="_blank">充值</a></li>
+                            <li><a href="javascript:;" title="地方特产" target="_blank">游戏</a></li>
+                            <li class="left"><a href="javascript:;" title="休闲食品" target="_blank">票务</a></li>
+                            <li><a href="javascript:;" title="粮油调味" target="_blank">手机配件</a></li>
+                            <li class="left"><a href="javascript:;" title="中外名酒" target="_blank">摄影摄像</a></li>
+                            <li><a href="javascript:;" title="饮料冲调" target="_blank">数码配件</a></li>
+                            <li class="left"><a href="javascript:;" title="营养健康" target="_blank">时尚影音</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">电脑整机</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">电脑配件</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">外设产品</a></li>
+                            <li class="left"><a href="javascript:;" title="亚健康调理" target="_blank">网络产品</a></li>
+                            <li><a href="javascript:;" title="亚健康调理" target="_blank">办公打印</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mid-ads mid-ads8">
+                    <ul class="tab-nav">
+                        <li class="select">
+                            <i class="arrow"></i>
+                            <h3>商品推荐</h3>
+                        </li>
+                    </ul>
+                    <div class="tab-panel panel2">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu1.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu2.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu3.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu4.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu5.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu6.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu7.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt class="goods-name"><a href="#">正宗无锡阳山水蜜桃 新鲜水果 桃子 多汁水蜜桃</a></dt>
+                                    <dd class="goods-thumb"><a target="_blank" href="#"><img src="img/shu8.jpg"></a></dd>
+                                    <dd class="goods-price"><em>￥80.00</em><span class="original">￥160.00</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-ads">
+                    <div class="title"></div>
+                    <div class="brandlist brandlist8 clear">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/pp1.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp2.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp3.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp4.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp5.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp6.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp7.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp8.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp9.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp10.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/pp12.jpg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidefocus sidefocus8">
+                        <ul>
+                            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="img/a2.jpg" alt=""></a></li>
+                        </ul>
+                        <div class="btn">
+                            <a href="javascript:;" class="active"></a>
+                            <a href="javascript:;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-------------------------footer----------------->
+    <div id="map">
+        <div class="content">
+            <ul class="clear">
+                <li>
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><i></i><a href="javascript:;">忘记密码</a></dd>
+                        <dd><i></i><a href="javascript:;">查看已购买商品</a></dd>
+                        <dd><i></i><a href="javascript:;">如何搜索</a></dd>
+                        <dd><i></i><a href="javascript:;">积分兑换说明</a></dd>
+                        <dd><i></i><a href="javascript:;">我要买</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>店主之家</dt>
+                        <dd><i></i><a href="javascript:;">商城商品推荐</a></dd>
+                        <dd><i></i><a href="javascript:;">如何管理店铺</a></dd>
+                        <dd><i></i><a href="javascript:;">如何发货</a></dd>
+                        <dd><i></i><a href="javascript:;">如何申请开店</a></dd>
+                        <dd><i></i><a href="javascript:;">查看售出商品</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>支付方式</dt>
+                        <dd><i></i><a href="javascript:;">邮局汇款</a></dd>
+                        <dd><i></i><a href="javascript:;">如何注册支付宝</a></dd>
+                        <dd><i></i><a href="javascript:;">分期付款</a></dd>
+                        <dd><i></i><a href="javascript:;">公司转账</a></dd>
+                        <dd><i></i><a href="javascript:;">在线支付</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd><i></i><a href="javascript:;">退换货政策</a></dd>
+                        <dd><i></i><a href="javascript:;">返修/退换货</a></dd>
+                        <dd><i></i><a href="javascript:;">联系卖家</a></dd>
+                        <dd><i></i><a href="javascript:;">退换货流程</a></dd>
+                        <dd><i></i><a href="javascript:;">退款申请</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>客服中心</dt>
+                        <dd><i></i><a href="javascript:;">会员修改个人资料</a></dd>
+                        <dd><i></i><a href="javascript:;">修改收货地址</a></dd>
+                        <dd><i></i><a href="javascript:;">会员修改密码</a></dd>
+                        <dd><i></i><a href="javascript:;">商品发布</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><i></i><a href="javascript:;">关于JDDShop</a></dd>
+                        <dd><i></i><a href="javascript:;">招聘英才</a></dd>
+                        <dd><i></i><a href="javascript:;">联系我们</a></dd>
+                        <dd><i></i><a href="javascript:;">合作及洽谈</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="content">
+            <p class="p1"><a href="">首页</a><span>|</span><a href="">招聘英才</a><span>|</span><a href="">合作及洽谈</a><span>|</span><a href="">联系我们</a><span>|</span><a href="">关于JDDShop</a><span>|</span><a href="">专题</a></p>
+            <p class="p2">Copyright 2008-2015 JDDShop Inc.,All rights reserved.</p>
+        </div>
+    </div>
+
+    <!---------------右侧固定导航栏-------------->
+    <div id="slidebar">
+        <div class="user"><a href="login.html"><i><img src="img/user.gif"></i><span>未登录</span></a> </div>
+        <ul class="tools">
+            <li class="chat">
+                <a href="javascript:;"><span>聊天</span></a>
+            </li>
+            <li class="cart">
+                <a href="javascript:;"><span>购物车</span></a>
+            </li>
+            <li class="share">
+                <a href="javascript:;"><i></i><sapn>分享</sapn></a>
+            </li>
+            <li class="backtop"><a href="javascript:;"><i></i><span>顶部</span></a> </li>
+        </ul>
+        <div class="carthide">
+            <div class="top">
+                <h3>我的购物车</h3>
+                <a href="javascript:;" class="cartbtn"></a>
+            </div>
+            <div class="bot">
+                <ul>
+                    <li>暂无商品</li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class=close></a>
+    </div>
+
+    <!----------------工具条-------------------->
+    <div id="toolhide">
+        <div class="user-avatar">
+            <img src="img/user.gif">
+        </div>
+        <div class="frame"></div>
+        <div class="show"></div>
+    </div>
+
+    <!--------------左侧导航条------------------->
+    <div id="slidenav">
+        <ul>
+            <li id="tcyl" class="current"><a href="javascript:;"><span>特产优联</span><i class="iconfont1">&#xe604;</i></a></li>
+            <li id="dnsm"><a href="javascript:;"><span>电脑数码</span><i class="iconfont1">&#xe623;</i></a></li>
+            <li id="fsxb"><a href="javascript:;"><span>服饰鞋包</span><i class="iconfont1">&#xe668;</i></a></li>
+            <li id="mrzb"><a href="javascript:;"><span>美容珠宝</span><i class="iconfont1">&#xe6e3;</i></a></li>
+            <li id="jjsh"><a href="javascript:;"><span>居家生活</span><i class="iconfont1">&#xe61e;</i></a></li>
+            <li id="mywj"><a href="javascript:;"><span>母婴玩具</span><i class="iconfont1">&#xe6db;</i></a></li>
+            <li id="spbj"><a href="javascript:;"><span>食品保健</span><i class="iconfont1">&#xe627;</i></a></li>
+            <li id="tsyx"><a href="javascript:;"><span>图书音像</span><i class="iconfont1">&#xe6fb;</i></a></li>
+        </ul>
+    </div>
+</body>
+</html>

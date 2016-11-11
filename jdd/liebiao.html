@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <link rel="stylesheet" type="text/css" href="css/liebiao.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/liebiao.js"></script>
+    <script src="js/cookie.js"></script>
+</head>
+<body>
+<!--=======-------------header------------------------>
+<div id="header" class="clear">
+    <div class="content">
+        <div class="head-left fl">
+            <div class="fav fl"><a href="javascript:;"><img src="img/star.png"  class="unturn">收藏聚点点移动分销商城</a></div>
+            <div class="subnav fl">
+                <span>您好，欢迎来到</span>
+                <span class="a1"><a href="javascript:;">聚点点移动分销商城</a></span>
+                <span class="a1"><a href="javascript:;">[登录]</a></span>
+                <span class="a1"><a href="javascript:;">[注册]</a></span>
+                <span class="manage"><a href="javascript:;" class="iconfont">&#xe607;商城管理中心</a></span>
+                <span class="enter"><a href="javascript:;" class="iconfont">&#xe602;商家入驻中心</a></span>
+            </div>
+        </div>
+
+        <div class="head-right fr">
+            <ul>
+                <li class="first hidebox">
+                    <a href="javascript:;">手机版</a>
+                    <div class="hide">
+                        <div class="qrcode"><img src="img/app.png"></div>
+                        <div class="choose">
+                            <h4>扫描二维码</h4>
+                            <p>下载手机客户端</p>
+                            <div>
+                                <a href="javascript:;" class="type1">Android</a>
+                                <a href="javascript:;" class="type2">iPhone</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的订单<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">待付款订单</a></li>
+                            <li><a href="javascript:;">待确认收货</a></li>
+                            <li><a href="javascript:;">待评价交易</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的收藏<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">商品收藏</a></li>
+                            <li><a href="javascript:;">店铺收藏</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">客户服务<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">帮助中心</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                            <li><a href="javascript:;">客服中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--------------------subbanner----------------------->
+<div id="subbanner">
+    <div class="content">
+        <a href="javascript:;"><img src="img/subbanner.jpg"></a><a href="javascript:;" class="close1"><img src="img/close.png"></a>
+    </div>
+</div>
+
+<!-----------------------logo-------------------------->
+<div id="logo">
+    <div class="content">
+        <div class="logoimg fl"><a href="javascript:;"><img src="img/logo.png"></a></div>
+        <div class="wrap fl">
+            <div class="searchbox">
+                <div class="tab fl">
+                    <a href="javascript:;" class="active">商品</a>
+                    <a href="javascript:;" class="a2">店铺</a>
+                </div>
+                <form class="search fl">
+                    <input type="text" name="tx" value="" placeholder="请输入您要搜索的商品关键字或店铺名称" id="tx" autocomplete="off">
+                    <input type="button" name="btn" value="搜索" id="btn">
+                    <ul id="searchlist"></ul>
+                </form>
+            </div>
+            <ul class="hotsearch">
+                <li class="first">热门搜索：</li>
+                <li><a href="javascript:;">电子商务</a></li>
+                <li><a href="javascript:;">聚点点</a></li>
+                <li><a href="javascript:;">JDDShop</a></li>
+            </ul>
+        </div>
+        <div class="shop-cart fr">
+            <div class="myshop fl">
+                <a href="javascript:;"><i></i><span>我的商城</span><b></b></a>
+                <div class="hide">
+                    <div class="myinfo">
+                        <a href="javascript:;">我的用户中心<i></i></a>
+                    </div>
+                    <ul class="clear">
+                        <li class="left"><a href="javascript:;">站内消息(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的订单<i></i></a></li>
+                        <li class="left"><a href="javascript:;">咨询回复(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的收藏<i></i></a></li>
+                        <li class="left"><a href="javascript:;">代金券(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的积分<i></i></a></li>
+                    </ul>
+                    <div class="history">
+                        <p><span>最近浏览的商品</span><a href="javascript:;">全部浏览历史</a></p>
+                        <ul>
+                            <li>暂无商品</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mycart fl">
+                <a href="javascript:;"><i></i><span>购物车结算</span><b></b></a>
+                <div class="hide">
+                    <h4>最近加入的商品</h4>
+                    <div class="box1">您的购物车中暂无商品，赶快选择心爱的商品吧！</div>
+                    <div class="box2 clear"><a href="javascript:;">计算购物车中的商品</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------nav部分------------------- -->
+<div id="nav">
+    <div class="content">
+        <div class="fl menu">
+            <p class="p">所有商品分类</p>
+            <div class="menu-left">
+                <ul>
+                    <li class="li-one">
+                        <h5>特产优连</h5>
+                        <p><a href="javascript:;">饼干蛋糕</a><a href="javascript:;">糖果巧克力</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>数码办公</h5>
+                        <p><a href="javascript:;">手机电池</a><a href="javascript:;">蓝牙耳机</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>服饰鞋帽</h5>
+                        <p><a href="javascript:;">T恤</a><a href="javascript:;">衬衫</a><a href="javascript:;">针织衫</a><a href="javascript:;">雪纺衫</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>美容珠宝</h5>
+                        <p><a href="javascript:;">洁面乳</a><a href="javascript:;">爽肤水</a><a href="javascript:;">精华露</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>居家生活</h5>
+                        <p><a href="javascript:;">床品件套</a><a href="javascript:;">被子</a><a href="javascript:;">枕芯枕套</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>母婴用品</h5>
+                        <p><a href="javascript:;">品牌奶粉</a><a href="javascript:;">妈妈奶粉</a><a href="javascript:;">1段奶粉</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>生活健康</h5>
+                        <p><a href="javascript:;">户外服装</a><a href="javascript:;">户外鞋袜</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>虚拟充值</h5>
+                        <p><a href="javascript:;">手机充值</a><a href="javascript:;">游戏点卡</a><a href="javascript:;">QQ充值</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="fl">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">抢购</a></li>
+            <li><a href="javascript:;">品牌</a></li>
+            <li><a href="javascript:;">积分中心</a></li>
+            <li><a href="javascript:;">专题</a></li>
+            <li><a href="javascript:;">物流</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-------------------------banner-------------------->
+<div id="banner">
+    <div class="content">
+        <div class="title">
+            <a href="javascript:;">首页</a><i>></i><span>特产优联</span>
+        </div>
+        <div class="container clear">
+            <div class="con-left">
+                <div class="imglist">
+                    <ul>
+                        <li><a href="javascript:;"><img src="img/lb1.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="img/lb2.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="img/lb3.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="btnlist">
+                    <a href="javascript:;" class="hover"></a><a href="javascript:;"></a><a href="javascript:;"></a>
+                </div>
+                <div class="direction">
+                    <a href="javascript:;" class="leftbtn"><</a>
+                    <a href="javascript:;" class="rightbtn">></a>
+                </div>
+            </div>
+            <div class="con-mid">
+                <ul>
+                    <li><a href="javascript:;"><img src="img/ad1.jpg"></a></li>
+                    <li><a href="javascript:;"><img src="img/ad2.jpg"></a></li>
+                </ul>
+            </div>
+            <div class="con-right">
+                <ul>
+                    <li><a href="javascript:;"><img src="img/ad3.png" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="img/ad4.png" alt=""></a></li>
+                    <li><a href="javascript:;"><img src="img/ad3.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------main----------------------->
+<div id="main" class="clear">
+    <div class="content">
+        <div class="mainl">
+            <div class="box1">
+                <h3>分类筛选</h3>
+                <ul class="tree">
+                    <li class="active"><a href="#">特产优联</a>
+                        <ul class="submenu">
+                            <li><a href="#">进口食品</a>
+                                <ul>
+                                    <li><a href="#">饼干蛋糕</a></li>
+                                    <li><a href="#">糖果巧克力</a></li>
+                                    <li><a href="#">休闲零食</a></li>
+                                    <li><a href="#">冲调饮品</a></li>
+                                    <li><a href="#">粮油调味</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">地方特产</a>
+                                <ul>
+                                    <li><a href="#">华北</a></li>
+                                    <li><a href="#">西北</a></li>
+                                    <li><a href="#">西南</a></li>
+                                    <li><a href="#">东北</a></li>
+                                    <li><a href="#">华南</a></li>
+                                    <li><a href="#">华东</a></li>
+                                    <li><a href="#">华中</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">休闲食品</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">粮油调味</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">中外名酒</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">饮料冲调</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">营养健康</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">亚健康调理</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">健康礼品</a>
+                                <ul></ul>
+                            </li>
+                            <li><a href="#">生鲜食品</a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">数码办公</a>
+                        <ul></ul>
+                    </li>
+                    <li><a href="#">美容珠宝</a>
+                        <ul></ul>
+                    </li>
+                    <li><a href="#">居家生活</a>
+                        <ul></ul>
+                    </li>
+                    <li><a href="#">母婴用品</a>
+                        <ul></ul>
+                    </li>
+                    <li><a href="#">生活健康</a>
+                        <ul></ul>
+                    </li>
+                    <li><a href="#">虚拟充值</a>
+                        <ul></ul>
+                    </li>
+                 </ul>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+                <a href="javascript:;"><img src="img/guang.gif"></a>
+            </div>
+            <div class="box4">
+                <h3>最近浏览</h3>
+                <div class="history">
+                    <ul></ul>
+                    <a href="javascript:;">全部浏览历史</a>
+                </div>
+            </div>
+        </div>
+        <div class="mainr">
+            <div class="sort-bar">
+                <div class="px">
+                    <span>排序方式：</span>
+                    <ul class="clear">
+                        <li class="select"><a href="javascript:;">默认<i></i></a></li>
+                        <li><a href="javascript:;">销量<i></i></a></li>
+                        <li><a href="javascript:;">人气<i></i></a></li>
+                        <li class="last"><a href="javascript:;">价格<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="zy">
+                    <a href="javascript:;"><i></i>平台自营</a>
+                </div>
+                <div class="zp">
+                    <a href="javascript:;"><i></i>赠品</a>
+                </div>
+                <div class="address">
+                    <span>商品所在地：</span>
+                    <div class="wrap"><a href="javascript:;" class="chose">不限地区<i></i></a></div>
+                    <div class="choice">
+                        <dl>
+                            <dt>常用地区</dt>
+                            <dd><a href="javascript:;">北京</a></dd>
+                            <dd><a href="javascript:;">天津</a></dd>
+                            <dd><a href="javascript:;">上海</a></dd>
+                            <dd><a href="javascript:;">海外</a></dd>
+                        </dl>
+                        <div><a href="javascript:;">不限地区</a></div>
+                    </div>
+                </div>
+                <div class="pagebtn">
+                    <ul>
+                        <li class="pre"><span>上一页</span></li>
+                        <li class="next"><span>下一页</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container clear">
+                <ul class="goodslist">
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥10.50</b><i>¥13.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food1.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="10.50">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li >
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>水果新鲜<i>甜、大</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥13.01</b><i>¥15.00</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">栗子水果店</a>
+                                </div>
+                                <div class="add-cart"  data-img="img/food2.jpg" data-store="栗子水果店" data-name="水果新鲜 甜、大" data-price="13.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food3.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>又大又甜的水果<i>新鲜</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥24.00</b><i>¥22.00</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">哆啦世家</a>
+                                </div>
+                                <div class="add-cart"  data-img="img/food3.jpg" data-store="哆啦世家" data-name="又大又甜的水果 新鲜" data-price="24.00">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food4.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food4.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="0.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food5.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food5.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="0.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food6.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food6.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="0.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food7.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food7.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="0.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food8.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart" data-img="img/food8.jpg" data-store="聚点点官方旗舰店" data-name="脆饼干 香、脆" data-price="0.01">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/bing.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/bing.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food1.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li >
+                        <div class="wrap">
+                            <div class="goodsimg"><a href="javascript:;"><img src="img/food2.jpg"></a></div>
+                            <div class="goods-info">
+                                <div class="goods-show">
+                                    <ul>
+                                        <li class="select"><a href="javascript:;"><img src="img/small.jpg"></a> </li>
+                                    </ul>
+                                </div>
+                                <div class="goods-name">
+                                    <a href="javascript:;"> <span>脆饼干<i>香、脆</i></span></a>
+                                </div>
+                                <div class="goods-price">
+                                    <b>¥0.01</b><i>¥0.02</i>
+                                    <span>
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                        <img src="img/star1.png">
+                                    </span>
+                                </div>
+                                <div class="goods-sub">
+                                    <span><i></i>加入对比</span>
+                                </div>
+                                <div class="sell-start">
+                                    <ul>
+                                        <li><a href="#" class="status">1</a><p>商品销量</p></li>
+                                        <li><a href="#" class="comments">0</a><p>用户评论</p></li>
+                                    </ul>
+                                </div>
+                                <div class="store">
+                                    <a href="javascript:;">聚点点官方旗舰店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="javascript:;">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tc">
+                <ul class="clear">
+                    <li>首页</li>
+                    <li>上一页</li>
+                    <li>1</li>
+                    <li>下一页</li>
+                    <li>末页</li>
+                </ul>
+            </div>
+            <div class="guess">
+                <h3>猜您喜欢的宝贝</h3>
+                <div class="con"><span>暂无商品向您推荐</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------footer----------------->
+<div id="map">
+    <div class="content">
+        <ul class="clear">
+            <li>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd><i></i><a href="javascript:;">忘记密码</a></dd>
+                    <dd><i></i><a href="javascript:;">查看已购买商品</a></dd>
+                    <dd><i></i><a href="javascript:;">如何搜索</a></dd>
+                    <dd><i></i><a href="javascript:;">积分兑换说明</a></dd>
+                    <dd><i></i><a href="javascript:;">我要买</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>店主之家</dt>
+                    <dd><i></i><a href="javascript:;">商城商品推荐</a></dd>
+                    <dd><i></i><a href="javascript:;">如何管理店铺</a></dd>
+                    <dd><i></i><a href="javascript:;">如何发货</a></dd>
+                    <dd><i></i><a href="javascript:;">如何申请开店</a></dd>
+                    <dd><i></i><a href="javascript:;">查看售出商品</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><i></i><a href="javascript:;">邮局汇款</a></dd>
+                    <dd><i></i><a href="javascript:;">如何注册支付宝</a></dd>
+                    <dd><i></i><a href="javascript:;">分期付款</a></dd>
+                    <dd><i></i><a href="javascript:;">公司转账</a></dd>
+                    <dd><i></i><a href="javascript:;">在线支付</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd><i></i><a href="javascript:;">退换货政策</a></dd>
+                    <dd><i></i><a href="javascript:;">返修/退换货</a></dd>
+                    <dd><i></i><a href="javascript:;">联系卖家</a></dd>
+                    <dd><i></i><a href="javascript:;">退换货流程</a></dd>
+                    <dd><i></i><a href="javascript:;">退款申请</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>客服中心</dt>
+                    <dd><i></i><a href="javascript:;">会员修改个人资料</a></dd>
+                    <dd><i></i><a href="javascript:;">修改收货地址</a></dd>
+                    <dd><i></i><a href="javascript:;">会员修改密码</a></dd>
+                    <dd><i></i><a href="javascript:;">商品发布</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><i></i><a href="javascript:;">关于JDDShop</a></dd>
+                    <dd><i></i><a href="javascript:;">招聘英才</a></dd>
+                    <dd><i></i><a href="javascript:;">联系我们</a></dd>
+                    <dd><i></i><a href="javascript:;">合作及洽谈</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p class="p1"><a href="">首页</a><span>|</span><a href="">招聘英才</a><span>|</span><a href="">合作及洽谈</a><span>|</span><a href="">联系我们</a><span>|</span><a href="">关于JDDShop</a><span>|</span><a href="">专题</a></p>
+        <p class="p2">Copyright 2008-2015 JDDShop Inc.,All rights reserved.</p>
+    </div>
+</div>
+<!---------------右侧固定导航栏-------------->
+<div id="slidebar">
+    <div class="user"><a href="javascript:;"><i><img src="img/user.gif"></i><span>未登录</span></a> </div>
+    <ul class="tools">
+        <li class="chat">
+            <a href="javascript:;"><span>聊天</span></a>
+        </li>
+        <li class="cart">
+            <a href="javascript:;"><span>购物车</span></a>
+        </li>
+        <li class="share">
+            <a href="javascript:;"><i></i><sapn>分享</sapn></a>
+        </li>
+        <li class="backtop"><a href="javascript:;"><i></i><span>顶部</span></a> </li>
+    </ul>
+    <div class="carthide">
+        <div class="top">
+            <h3>我的购物车</h3>
+            <a href="javascript:;" class="cartbtn"></a>
+        </div>
+        <div class="bot">
+            <ul>
+                <li>暂无商品</li>
+            </ul>
+        </div>
+    </div>
+    <a href="javascript:;" class=close></a>
+</div>
+
+<!----------------工具条-------------------->
+<div id="toolhide">
+    <div class="user-avatar">
+        <img src="img/user.gif">
+    </div>
+    <div class="frame"></div>
+    <div class="show"></div>
+</div>
+</body>
+</html>

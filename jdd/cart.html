@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cookie.js"></script>
+</head>
+<body>
+<!--=======-------------header------------------------>
+<div id="header" class="clear">
+    <div class="content">
+        <div class="head-left fl">
+            <div class="fav fl"><a href="javascript:;"><img src="img/star.png"  class="unturn">收藏聚点点移动分销商城</a></div>
+            <div class="subnav fl">
+                <span>您好，欢迎来到</span>
+                <span class="a1"><a href="javascript:;">聚点点移动分销商城</a></span>
+                <span class="a1"><a href="login.html">[登录]</a></span>
+                <span class="a1"><a href="javascript:;">[注册]</a></span>
+                <span class="manage"><a href="javascript:;" class="iconfont">&#xe607;商城管理中心</a></span>
+                <span class="enter"><a href="javascript:;" class="iconfont">&#xe602;商家入驻中心</a></span>
+            </div>
+        </div>
+
+        <div class="head-right fr">
+            <ul>
+                <li class="first hidebox">
+                    <a href="javascript:;">手机版</a>
+                    <div class="hide">
+                        <div class="qrcode"><img src="img/app.png"></div>
+                        <div class="choose">
+                            <h4>扫描二维码</h4>
+                            <p>下载手机客户端</p>
+                            <div>
+                                <a href="javascript:;" class="type1">Android</a>
+                                <a href="javascript:;" class="type2">iPhone</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的订单<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">待付款订单</a></li>
+                            <li><a href="javascript:;">待确认收货</a></li>
+                            <li><a href="javascript:;">待评价交易</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的收藏<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">商品收藏</a></li>
+                            <li><a href="javascript:;">店铺收藏</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">客户服务<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">帮助中心</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                            <li><a href="javascript:;">客服中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-------------------------logo----------------------->
+<div id="logo">
+    <div class="content">
+        <div class="logoimg"><a href="jdd.html"><img src="img/logo.png"></a></div>
+        <ul>
+            <li class="step1">
+                <i></i>
+                <p>我的购物车</p>
+                <sub></sub>
+                <div class="hr"></div>
+            </li>
+            <li class="step2">
+                <i></i>
+                <p>填写核对购物信息</p>
+                <sub></sub>
+                <div class="hr"></div>
+            </li>
+            <li class="step3">
+                <i></i>
+                <p>支付提交</p>
+                <sub></sub>
+                <div class="hr"></div>
+            </li>
+            <li class="step4">
+                <i></i>
+                <p>订单完成</p>
+                <sub></sub>
+                <div class="hr"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--------------------------main----------------------------->
+<div id="main">
+    <div class="content">
+        <div class="title">
+            <h3>我的购物车</h3>
+            <p>查看购物车商品清单，增加减少商品数量，并勾选想要的商品进入下一步操作。</p>
+        </div>
+        <table id="box">
+           <!-- <thead>
+                <tr>
+                    <th class="th1"><input type="checkbox" id="selectAll" name="checkbox" value="" checked="checked"><label for="selectAll">全选</label></th>
+                    <th style="width:60px;"></th>
+                    <th class="th2" style="width:448px;">商品</th>
+                    <th class="th3" style="width:120px;">单价(元)</th>
+                    <th class="th4" style="width:120px;">数量</th>
+                    <th class="th5" style="width:120px;">小计(元)</th>
+                    <th class="th6" style="width:80px;">操作</th>
+                </tr>
+            </thead>-->
+            <!--<tbody>
+                <tr class="store">
+                    <th colspan="20"><strong>店铺：<a href="javascript:;" style="color:#333">聚点点官方旗舰店</a></strong></th>
+                </tr>
+                <tr class="info">
+                    <td class="chosebtn"><input type="checkbox" name="checkbox" value="" id="check1" checked="checked"></td>
+                    <td class="goodimg"><a href="javascript:;"><img src="img/food1.jpg"></a></td>
+                    <td class="goodname"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></td>
+                    <td class="goodprice"><em>59.00</em></td>
+                    <td class="goodnum">
+                        <a href="javascript:;">-</a>
+                        <input type="text" name="tx" value="1" id="tx">
+                        <a href="javascript:;">+</a>
+                    </td>
+                    <td class="add-price"><em>59.00</em></td>
+                    <td class="status"><a href="javascript:;" >收藏</a><br/><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr class="storeprice"><td colspan="20"><p><span>店铺合计：</span><em>22.00</em>元</p></td></tr>
+            </tbody>-->
+            <!--<tfoot>
+                <tr class="foot"><td colspan="20"><p>商品总价 ( 不含运费 )<strong>859.01</strong>元</p></td></tr>
+            </tfoot>-->
+        </table>
+        <div class="next">
+            <a href="javascript:;">下一步 ，填写核对购物信息</a>
+        </div>
+        <div class="guessgood">
+            <div class="head">猜您喜欢的宝贝</div>
+            <div class="con">暂无商品向您推荐</div>
+        </div>
+    </div>
+</div>
+
+<!------------------------------footer--------------------------->
+<div id="footer">
+    <div class="content">
+        <p class="p1"><a href="javascript:;">首页</a><span>|</span><a href="javascript:;">招聘英才</a><span>|</span><a href="javascript:;">合作及洽谈</a><span>|</span><a href="javascript:;">联系我们</a><span>|</span><a href="javascript:;">关于JDDShop</a><span>|</span><a href="javascript:;">专题</a></p>
+        <p class="p2">Copyright 2008-2015 JDDShop Inc.,All rights reserved.</p>
+    </div>
+</div>
+
+<!-----------------------------收藏提示框---------------------------->
+<div id="dialog">
+    <h3><span>提示信息</span><span class="close">×</span></h3>
+    <div class="markword"><i></i><span>您已收藏过该商品</span></div>
+    <div class="ensurebtn"><a href="javascript:;">确定</a></div>
+</div>
+
+
+
+</body>
+</html>

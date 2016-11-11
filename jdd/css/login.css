@@ -1,0 +1,299 @@
+body,html,div,ul,li,ol,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,table,tr,td,form,fieldset,legend,input{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border:none;
+    vertical-align: bottom;
+}
+body{
+    font:12px/150% "Microsoft Yahei"
+}
+.clear:after{
+    content:".";
+    clear:both;
+    display: block;
+    height:0;
+    overflow:hidden;
+    visibility: hidden;
+}
+.content{
+    width:1200px;
+    margin:0 auto;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:12px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+@font-face {font-family: 'iconfont';
+    src: url('../font1/iconfont.eot'); /* IE9*/
+    src: url('../font1/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font1/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font1/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font1/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont1{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+
+/*=====================subbanner=============================*/
+#subbanner{
+    width:100%;
+    min-width: 1200px;
+}
+#subbanner .content{
+    position: relative;
+}
+#subbanner .close1{
+    position: absolute;
+    top:5px;
+    right:5px;
+}
+
+/*-----------------------logo---------------------*/
+#logo{
+    width:100%;
+    min-width:1200px;
+    padding-top:25px;
+    padding-left:100px;
+}
+#logo img{
+    max-width:240px;
+    max-height:60px;
+}
+
+/*------------------main-------------------*/
+#main{
+    width:100%;
+    min-width: 1200px;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+#main .content{
+    width:850px;
+    margin:0 auto;
+}
+#main .left{
+    width:450px;
+    height:350px;
+    float:left;
+}
+#main .right{
+    float:right;
+    width:398px;
+    border:1px solid #D8D8D8;
+    background: #F9F9F9;
+}
+#main .right h3{
+    font-size:18px;
+    font-weight: 700;
+    line-height:20px;
+    padding:15px 0 25px 25px;
+    color:#555;
+}
+#main .right .enter-info{
+   padding:0 20px;
+}
+#main .right dl{
+    width:100%;
+    float:left;
+}
+#main .right dl dt{
+    font-size:14px;
+    line-height:28px;
+    color:#777;
+    text-align: right;
+    width:22%;
+    float:left;
+}
+#main .right dl dd{
+    text-align: left;
+    min-height:54px;
+    width:75%;
+    float:right;
+}
+#main .right dl dd input{
+    width:220px;
+    height:20px;
+    line-height:20px;
+    background: #fff;
+    padding:3px;
+    border:1px solid #BBB;
+    outline: none;
+    float:left;
+}
+#main .right dl .onerror{
+    line-height:24px;
+    height:24px;
+    color:#F30;
+    float:left;
+    display:none;
+}
+#main .right #check{
+    width:50px;
+    height:20px;
+    line-height:20px;
+    padding:3px;
+}
+#main .right .checkcode dd a img{
+    margin-left:5px;
+}
+#main .right .checkcode dd a span{
+    line-height:28px;
+    height:28px;
+    text-align: left;
+    color:#999;
+    margin-left:5px;
+}
+#main .right .loginbtn #btn{
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+    background: url(../img/login1.png) no-repeat scroll 0 -56px;
+    width:98px;
+    height:34px;
+    border:0;
+    cursor:pointer;
+    letter-spacing: 6px;
+}
+#main .right .loginbtn #btn:hover{
+    background: url(../img/login1.png) no-repeat scroll 0 -90px;
+}
+#main .right .loginbtn dd a{
+    font-weight:700;
+    color:#06C;
+    vertical-align: middle;
+    margin-left:10px;
+    line-height:34px;
+}
+#main .right .last dd{
+    line-height:26px;
+    height:26px;
+    min-height:26px;
+    margin-top:-10px;
+    margin-bottom:10px;
+    color:#666;
+}
+#main .right .last dd a{
+    background: url(../img/login1.png) no-repeat -98px -56px;
+    font-weight:600;
+    line-height:26px;
+    color:#555;
+    text-align: center;
+    display: inline-block;
+    width:50px;
+    height:26px;
+    margin:0 6px;
+}
+#main .right .last dd a:hover{
+    background: url(../img/login1.png) no-repeat -98px -82px;
+    color:#000;
+}
+#main .right .otherwise dl{
+    width:100%;
+    float:left;
+}
+#main .right .otherwise dd{
+    text-align: left;
+    width:75%;
+    float:right;
+    border-top:1px dashed #D8D8D8;
+    padding:10px 0 20px 28%;
+}
+#main .right .otherwise dd p{
+    line-height:20px;
+    color:#777;
+}
+#main .right .otherwise dd a{
+    background: url(../img/login1.png) no-repeat scroll -88px 0;
+    margin-top:10px;
+    display: inline-block;
+    width:78px;
+    line-height:28px;
+    height:28px;
+    text-align: left;
+    color:#999;
+}
+#main .right .otherwise dd a:hover{
+    background: url(../img/login1.png) no-repeat -88px -28px;
+}
+#main .right .enter-info{
+    position: relative;
+}
+#main .shadow{
+    background: url(../img/login1.png) no-repeat scroll 0 -124px;
+    width:400px;
+    height:40px;
+    position: absolute;
+    top:335px;
+    left:-1px;
+}
+/*
+#main .right dl dd input:focus{
+    border-color:#EFA100;
+    outline:2px solid #FFSC97;
+}*/
+
+/*-----------------------------footer--------------------------*/
+#footer{
+    width:100%;
+    min-width: 1200px;
+    padding-bottom:10px;
+    padding-top:30px;
+}
+#footer p{
+    padding:10px 0;
+    text-align: center;
+}
+#footer p a{
+    color:#666;
+}
+#footer p a:hover{
+    text-decoration: underline;
+}
+#footer p span{
+    padding:0 8px;
+    color:#666;
+}
+#footer .copyright{
+    padding-top:0;
+    padding-bottom:20px;
+    color:#666;
+}
+
+
+
+
+
+
+
+
+
+
+

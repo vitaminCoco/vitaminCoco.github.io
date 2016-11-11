@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
+    <script src="js/cookie.js"></script>
+</head>
+<body>
+<!--=======-------------header------------------------>
+<div id="header" class="clear">
+    <div class="content">
+        <div class="head-left fl">
+            <div class="fav fl"><a href="javascript:;"><img src="img/star.png"  class="unturn">收藏聚点点移动分销商城</a></div>
+            <div class="subnav fl">
+                <span>您好，欢迎来到</span>
+                <span class="a1"><a href="javascript:;">聚点点移动分销商城</a></span>
+                <span class="a1"><a href="javascript:;">[登录]</a></span>
+                <span class="a1"><a href="javascript:;">[注册]</a></span>
+                <span class="manage"><a href="javascript:;" class="iconfont">&#xe607;商城管理中心</a></span>
+                <span class="enter"><a href="javascript:;" class="iconfont">&#xe602;商家入驻中心</a></span>
+            </div>
+        </div>
+
+        <div class="head-right fr">
+            <ul>
+                <li class="first hidebox">
+                    <a href="javascript:;">手机版</a>
+                    <div class="hide">
+                        <div class="qrcode"><img src="img/app.png"></div>
+                        <div class="choose">
+                            <h4>扫描二维码</h4>
+                            <p>下载手机客户端</p>
+                            <div>
+                                <a href="javascript:;" class="type1">Android</a>
+                                <a href="javascript:;" class="type2">iPhone</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的订单<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">待付款订单</a></li>
+                            <li><a href="javascript:;">待确认收货</a></li>
+                            <li><a href="javascript:;">待评价交易</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">我的收藏<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">商品收藏</a></li>
+                            <li><a href="javascript:;">店铺收藏</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="hidebox">
+                    <a href="javascript:;">客户服务<i></i></a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="javascript:;">帮助中心</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                            <li><a href="javascript:;">客服中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--------------------subbanner----------------------->
+<div id="subbanner">
+    <div class="content">
+        <a href="javascript:;"><img src="img/subbanner.jpg"></a><a href="javascript:;" class="close1"><img src="img/close.png"></a>
+    </div>
+</div>
+
+<!-----------------------logo-------------------------->
+<div id="logo">
+    <div class="content">
+        <div class="logoimg fl"><a href="javascript:;"><img src="img/logo.png"></a></div>
+        <div class="wrap fl">
+            <div class="searchbox">
+                <div class="tab fl">
+                    <a href="javascript:;" class="active">商品</a>
+                    <a href="javascript:;" class="a2">店铺</a>
+                </div>
+                <form class="search fl">
+                    <input type="text" name="tx" value="" placeholder="请输入您要搜索的商品关键字或店铺名称" id="tx" autocomplete="off">
+                    <input type="button" name="btn" value="搜索" id="btn">
+                    <ul id="searchlist"></ul>
+                </form>
+            </div>
+            <ul class="hotsearch">
+                <li class="first">热门搜索：</li>
+                <li><a href="javascript:;">电子商务</a></li>
+                <li><a href="javascript:;">聚点点</a></li>
+                <li><a href="javascript:;">JDDShop</a></li>
+            </ul>
+        </div>
+        <div class="shop-cart fr">
+            <div class="myshop fl">
+                <a href="javascript:;"><i></i><span>我的商城</span><b></b></a>
+                <div class="hide">
+                    <div class="myinfo">
+                        <a href="javascript:;">我的用户中心<i></i></a>
+                    </div>
+                    <ul class="clear">
+                        <li class="left"><a href="javascript:;">站内消息(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的订单<i></i></a></li>
+                        <li class="left"><a href="javascript:;">咨询回复(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的收藏<i></i></a></li>
+                        <li class="left"><a href="javascript:;">代金券(0)</a></li>
+                        <li class="right"><a href="javascript:;">我的积分<i></i></a></li>
+                    </ul>
+                    <div class="history">
+                        <p><span>最近浏览的商品</span><a href="javascript:;">全部浏览历史</a></p>
+                        <ul>
+                            <li>暂无商品</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mycart fl">
+                <a href="cart.html"><i></i><span>购物车结算</span><b></b></a>
+                <div class="hide">
+                    <h4>最近加入的商品</h4>
+                    <div class="box1">您的购物车中暂无商品，赶快选择心爱的商品吧！</div>
+                    <div class="box2 clear"><a href="javascript:;">计算购物车中的商品</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -----------------nav------------------------->
+<div id="nav">
+    <div class="content">
+        <div class="fl menu">
+            <p class="p">所有商品分类</p>
+            <div class="menu-left">
+                <ul>
+                    <li class="li-one">
+                        <h5>特产优连</h5>
+                        <p><a href="javascript:;">饼干蛋糕</a><a href="javascript:;">糖果巧克力</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>数码办公</h5>
+                        <p><a href="javascript:;">手机电池</a><a href="javascript:;">蓝牙耳机</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>服饰鞋帽</h5>
+                        <p><a href="javascript:;">T恤</a><a href="javascript:;">衬衫</a><a href="javascript:;">针织衫</a><a href="javascript:;">雪纺衫</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>美容珠宝</h5>
+                        <p><a href="javascript:;">洁面乳</a><a href="javascript:;">爽肤水</a><a href="javascript:;">精华露</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>居家生活</h5>
+                        <p><a href="javascript:;">床品件套</a><a href="javascript:;">被子</a><a href="javascript:;">枕芯枕套</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>母婴用品</h5>
+                        <p><a href="javascript:;">品牌奶粉</a><a href="javascript:;">妈妈奶粉</a><a href="javascript:;">1段奶粉</a></p>
+                    </li>
+                    <li class="li-one">
+                        <h5>生活健康</h5>
+                        <p><a href="javascript:;">户外服装</a><a href="javascript:;">户外鞋袜</a></p>
+                    </li>
+                    <li class="li-two">
+                        <h5>虚拟充值</h5>
+                        <p><a href="javascript:;">手机充值</a><a href="javascript:;">游戏点卡</a><a href="javascript:;">QQ充值</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="fl">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">抢购</a></li>
+            <li><a href="javascript:;">品牌</a></li>
+            <li><a href="javascript:;">积分中心</a></li>
+            <li><a href="javascript:;">专题</a></li>
+            <li><a href="javascript:;">物流</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--------------------------main-------------------->
+<div id="main">
+    <div class="content">
+        <div class="title">
+            <p><a href="javascript:;">首页</a><span>></span><a href="javascript:;">美容珠宝</a><span>></span><a href="javascript:;"> 翡翠玉石</a><span>></span>木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</p>
+        </div>
+        <div class="goods-about">
+            <div class="con-left">
+                <div class="magnifier">
+                    <div class="bigbox" id="bigbox">
+                        <ul>
+                            <li class="lgood1"><img src="img/big1.jpg" alt=""></li>
+                            <li class="lgood2"><img src="img/big2.jpg" alt=""></li>
+                        </ul>
+                        <div class="move" id="move"></div>
+                    </div>
+                    <div class="smallbox">
+                        <ul>
+                            <li class="sgood1 select"><img src="img/small1.jpg"></li>
+                            <li class="sgood2"><img src="img/small2.jpg"></li>
+                        </ul>
+                    </div>
+                    <div class="bigimgshow" id="bigger">
+                        <img src="img/big1.jpg">
+                    </div>
+                </div>
+                <div class="like">
+                    <a href="javascript:;" class="share">分享<span>(0)</span></a>
+                    <a href="javascript:;" class="collect">收藏商品<span>(0)</span></a>
+                    <a href="javascript:;" class="db"><i></i>加入对比</a>
+                    <a href="javascript:;" class="jb">举报</a>
+                </div>
+            </div>
+            <div class="con-mid">
+                <h2>木玩世家 切切看切切乐 木质儿童过家家积木玩具 水果系列</h2>
+                <div class="price-about">
+                    <div class="price">
+                        <p><span>市&nbsp;&nbsp;场&nbsp;&nbsp;价：</span><i>¥118.00</i></p>
+                        <p><span>商&nbsp;&nbsp;城&nbsp;&nbsp;价：</span><b>¥59.00</b></p>
+                    </div>
+                    <div class="comment">
+                        <a href="javascript:;">商品评分</a>
+                        <div>
+                            <img src="img/star1.png"><img src="img/star1.png"><img src="img/star1.png"><img src="img/star1.png"><img src="img/star1.png">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="moveprice">
+                    <p><span>至<a href="javascript:;"> 全 国</a>：</span><i>卖家承担运费</i></p>
+                </div>
+                <div class="buynum">
+                    <span>购 买 数 量：</span>
+                    <div>
+                        <input type="text" name="tx" value="1" id="tx1">
+                        <a href="javascript:;" class="increase">＋</a>
+                        <a href="javascript:;" class="decrease">－</a>
+                        <span>(当前库存<em>98</em>件)</span>
+                    </div>
+                </div>
+                <div class="buy">
+                    <a href="javascript:;" class="buynow status">立即购买</a>
+                    <a href="javascript:;" class="add-cart status"  data-img="img/big1.jpg" data-store="聚点点官方旗舰店" data-name="木玩世家 切切看切切乐 木质儿童过家家积木玩具 水果系列" data-price="59.00">添加购物车</a>
+                    <!--添加购物车成功-->
+                    <div id="dialog">
+                        <h3>成功添加到购物车<a href="javascript:;" class="close">×</a></h3>
+                        <p>购物车共有<strong>1</strong>种商品 总金额为：<em>¥59.00</em></p>
+                        <div><a href="cart.html" class="a1">查看购物车</a><a href="javascript:;" class="a2">继续购物</a></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="con-right">
+                <div class="top"></div>
+                <div class="box1">
+                    <dl>
+                        <dt>钻石店铺：</dt>
+                        <dd><img src="img/store.png"></dd>
+                    </dl>
+                </div>
+                <div class="box2">
+                    <dl>
+                        <dt>综合评分：</dt>
+                        <dd><span></span><i>5</i>分</dd>
+                    </dl>
+                </div>
+                <div class="box3">
+                    <p><b>店铺动态评分</b><span>与行业相比</span></p>
+                    <ul class="pf">
+                        <li>描述相符<span> 5 分</span></li>
+                        <li>服务态度<span> 5 分</span></li>
+                        <li>发货速度<span> 5 分</span></li>
+                    </ul>
+                </div>
+                <div class="box4">
+                    <dl class="dl1">
+                        <dt>公司名称：</dt>
+                        <dd>浙江聚点科技</dd>
+                    </dl>
+                    <dl class="dl2">
+                        <dt>所&nbsp;&nbsp;在&nbsp;&nbsp;地：</dt>
+                        <dd>浙江</dd>
+                    </dl>
+                </div>
+                <div class="box5">
+                    <a href="javascript:;">进入商家店铺</a>
+                    <a href="javascript:;">收藏店铺<span>0</span></a>
+                </div>
+                <div class="box6">
+                    <ul>
+                        <li class="map"><a href="javascript:;">店铺地图</a></li>
+                        <li class="code">
+                            <a href="javascript:;">店铺二维码</a>
+                            <div>
+                                <img src="img/code.png">
+                                <span>手机扫描二维码<br>快速收藏店铺</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="goods-expand">
+            <div class="part-left">
+                <div class="mate1">
+                    <h3>商品二维码</h3>
+                    <div class="wrap">
+                        <div class="codeimg"><img src="img/57.png"></div>
+                        <span><i></i>扫描二维码，手机查看分享</span>
+                    </div>
+                </div>
+                <div class="mate2"></div>
+                <div class="mate3">
+                    <h3>商品分类</h3>
+                    <p>
+                        <span><a href="javascript:;">按新品</a></span>
+                        <span><a href="javascript:;">按价格</a></span>
+                        <span><a href="javascript:;">按销量</a></span>
+                        <span><a href="javascript:;">按人气</a></span>
+                    </p>
+                    <div class="search-box clear"><input type="text" name="tx" placeholder="搜索店内商品" id="tx2"><input type="button" name="btn" value="搜索" id="btn1"></div>
+                    <div class="list">
+                        <ul class="listitem">
+                            <li class="wraplist"><i>-</i><a href="javascript:;">全部商品</a></li>
+                            <li class="wraplist">
+                                <i>-</i><a href="javascript:;">鞋子</a>
+                                <ul>
+                                    <li><a href="javascript:;">运动鞋</a></li>
+                                    <li><a href="javascript:;">童鞋</a></li>
+                                </ul>
+                            </li>
+                            <li class="wraplist">
+                                <i>-</i><a href="javascript:;">衣服</a>
+                                <ul>
+                                    <li><a href="javascript:;">女装</a></li>
+                                    <li><a href="javascript:;">童装</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mate4">
+                    <h3>商品排行</h3>
+                    <div class="hot">
+                        <a href="javascript:;" class="select">热销商品排行</a>
+                        <a href="javascript:;">热门收藏排行</a>
+                    </div>
+                    <div class="hotlist">
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li1.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li2.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li3.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li4.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li5.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                    </div>
+                    <div class="hotlist" style="display: none">
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li6.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li5.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li4.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li1.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt><a href="javascript:;"><img src="img/li2.jpg"></a> </dt>
+                            <dd class="title"><a href="javascript:;">木玩世家 切切看切切乐 木制儿童过家家积木玩具 水果系列</a></dd>
+                            <dd class="price">59.00</dd>
+                            <dd class="sellnum">售出：<i>1 笔</i></dd>
+                        </dl>
+                    </div>
+                    <div class="last"><a href="javascript:;">查看本店其他商品</a></div>
+                </div>
+            </div>
+            <div class="part-right">
+                <div class="sp-info">
+                    <ul class="tab-nav clear">
+                        <li class="current"><a href="javascript:;">商品详情</a></li>
+                        <li><a href="javascript:;">商品评价(0)</a></li>
+                        <li><a href="javascript:;">销售记录(1)</a></li>
+                        <li><a href="javascript:;">购买咨询</a></li>
+                    </ul>
+                    <ul class="tab-con clear">
+                        <li>商家货号：</li>
+                        <li>品牌：</li>
+                    </ul>
+                </div>
+                <!--<div class="com-rate">
+                    <h4><a href="javascript:;"> 商品评价</a></h4>
+                    <div class="con">
+                        <div class="rate">
+                            <p><b>100</b><i>%</i>好评</p>
+                            <span>共有0人参与评分</span>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>-->
+                <div class="com-con"></div>
+                <div class="sell-his"></div>
+                <div class="buy-ask"></div>
+                <div class="all"></div>
+                <div class="recommend"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------footer----------------->
+<div id="map">
+    <div class="content">
+        <ul class="clear">
+            <li>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd><i></i><a href="javascript:;">忘记密码</a></dd>
+                    <dd><i></i><a href="javascript:;">查看已购买商品</a></dd>
+                    <dd><i></i><a href="javascript:;">如何搜索</a></dd>
+                    <dd><i></i><a href="javascript:;">积分兑换说明</a></dd>
+                    <dd><i></i><a href="javascript:;">我要买</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>店主之家</dt>
+                    <dd><i></i><a href="javascript:;">商城商品推荐</a></dd>
+                    <dd><i></i><a href="javascript:;">如何管理店铺</a></dd>
+                    <dd><i></i><a href="javascript:;">如何发货</a></dd>
+                    <dd><i></i><a href="javascript:;">如何申请开店</a></dd>
+                    <dd><i></i><a href="javascript:;">查看售出商品</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><i></i><a href="javascript:;">邮局汇款</a></dd>
+                    <dd><i></i><a href="javascript:;">如何注册支付宝</a></dd>
+                    <dd><i></i><a href="javascript:;">分期付款</a></dd>
+                    <dd><i></i><a href="javascript:;">公司转账</a></dd>
+                    <dd><i></i><a href="javascript:;">在线支付</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd><i></i><a href="javascript:;">退换货政策</a></dd>
+                    <dd><i></i><a href="javascript:;">返修/退换货</a></dd>
+                    <dd><i></i><a href="javascript:;">联系卖家</a></dd>
+                    <dd><i></i><a href="javascript:;">退换货流程</a></dd>
+                    <dd><i></i><a href="javascript:;">退款申请</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>客服中心</dt>
+                    <dd><i></i><a href="javascript:;">会员修改个人资料</a></dd>
+                    <dd><i></i><a href="javascript:;">修改收货地址</a></dd>
+                    <dd><i></i><a href="javascript:;">会员修改密码</a></dd>
+                    <dd><i></i><a href="javascript:;">商品发布</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><i></i><a href="javascript:;">关于JDDShop</a></dd>
+                    <dd><i></i><a href="javascript:;">招聘英才</a></dd>
+                    <dd><i></i><a href="javascript:;">联系我们</a></dd>
+                    <dd><i></i><a href="javascript:;">合作及洽谈</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p class="p1"><a href="">首页</a><span>|</span><a href="">招聘英才</a><span>|</span><a href="">合作及洽谈</a><span>|</span><a href="">联系我们</a><span>|</span><a href="">关于JDDShop</a><span>|</span><a href="">专题</a></p>
+        <p class="p2">Copyright 2008-2015 JDDShop Inc.,All rights reserved.</p>
+    </div>
+</div>
+
+<!---------------右侧固定导航栏-------------->
+<div id="slidebar">
+    <div class="user"><a href="login.html"><i><img src="img/user.gif"></i><span>未登录</span></a> </div>
+    <ul class="tools">
+        <li class="chat">
+            <a href="javascript:;"><span>聊天</span></a>
+        </li>
+        <li class="cart">
+            <a href="javascript:;"><span>购物车</span></a>
+        </li>
+        <li class="share">
+            <a href="javascript:;"><i></i><sapn>分享</sapn></a>
+        </li>
+        <li class="backtop"><a href="javascript:;"><i></i><span>顶部</span></a> </li>
+    </ul>
+    <div class="carthide">
+        <div class="top">
+            <h3>我的购物车</h3>
+            <a href="javascript:;" class="cartbtn"></a>
+        </div>
+        <div class="bot">
+            <ul>
+                <li>暂无商品</li>
+            </ul>
+        </div>
+    </div>
+    <a href="javascript:;" class=close></a>
+</div>
+
+<!----------------工具条-------------------->
+<div id="toolhide">
+    <div class="user-avatar">
+        <img src="img/user.gif">
+    </div>
+    <div class="frame"></div>
+    <div class="show"></div>
+</div>
+
+
+
+</body>
+<!--http://www.jddshop.com/shop/index.php?act=goods&op=index&goods_id=57-->
+</html>
