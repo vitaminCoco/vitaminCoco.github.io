@@ -1,0 +1,661 @@
+使用creat-react-app快速构建React开发环境
+creat-react-app自动创建的项目是基于webpack+ES6.
+1.安装淘宝定制的cnpm命令行工具代替默认的npm（npm速度较慢）
+  $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+  $ npm config set registry https://registry.npm.taobao.org
+2.执行以下命令创建项目：
+  $ cnpm install -g create-react-app
+  $ create-react-app my-app
+  $ cd my-app/
+  $ npm start
+在浏览器中打开http://localhost:3000/
+
+react.js:React的核心库
+react.dom.js：提供与DOM相关的功能
+browser.js：将JSX语法转换为JS语法
+最后一步很消耗时间，实际上线的时候，应该将它放到服务器完成：
+   $ babel src --out-dir build(将src子目录的js文件进行语法转换，转码后的文件全部放在build子目录）
+
+ReactDOM.render()
+ReactDOM.render()是React的最基本的方法，用于将模板转为HTML语言，并插入指定的DOM节点
+
+React JSX：
+React使用JSX来替代常规的JS。JSX是一个看起来很像XML的JS语法扩展。
+我们不需要应一定使用JSX，但它有以下优点：
+   (1).JSX执行更快，因为它在编译为JS代码后进行了优化。
+   (2).它是类型安全的，在编译过程中就能发现错误。
+   (3).使用JSX编写模板更加简单快速。
+使用：
+1.可以在代码中嵌套多个HTML标签，需要使用一个div元素包裹它，添加自定义属性需要使用data-前缀。
+2.React JSX代码可以放在一个独立文件上，然后在HTML文件中引入该JS文件。
+3.可以在JSX中使用JS表达式，表达式写在花括号{}中。
+4.在JSX中不能使用if else语句，但可以使用conditional（三元运算）表达式来替代。
+
+样式：
+   React推荐使用内联样式。可以使用camelCase（驼峰命名法）语法来设置内联样式。React会在指定元素数字后自动添加px。组件的style属性的设置方式要注意，因为React组件样式是一个对象，所以不能写成style=“属性：{this.state.属性}”,而要写成style={{属性：this.state.属性}}，第一个大括号表示这是JS语法，第二个大括号表示样式对象。
+注释：
+   注释需要写在花括号中。{/* 注释 */}
+数组：
+   JSX允许在模板中插入数组，数组会自动展开所有成员。
+HTML标签和React组件：
+   React可以渲染HTML标签（strings)或React(classes）。
+   要渲染HTML标签，只需要在JSX里使用小写字母的标签名；
+   要渲染React组件，只需创建一个大写字母开头的本地变量。
+   React的JSX使用大、小写的约定来区分本地组件的类和HTML标签。
+注：由于JSX就是JS，一些标识符想class和for不建议作为XML属性名。作为替代，ReactDOM使用className和htmlFor来做对应的属性。
+
+React组件：
+使用组件使得我们的应用更容易来管理。
+1.React.createClass方法用于生成一个组件类Component.<Component/>实例组件类并输出信息。
+注：原生HTML元素名以小写字母开头，而自定义的React类名以大写字母开头。比如HelloMessage不能写成helloMessage。另外组件类只能包含一个顶层标签，否则也会报错。（即需要用div进行包裹）
+2.如果我们需要向组件传递参数，可以使用this.props对象。
+注：在添加属性时，class属性需要写成className，for属性需要写成htmlFor，这是因为class和for是JS的保留字。
+复合组件：
+通过创建多个组件来合成一个组件，即把组件的不同功能点进行分离。
+
+React State(状态)：
+1.React把组件看成是一个状态机，通过与用户的交互，实现不用状态，然后渲染UI，让用户界面与数据保持一致。
+2.React里，只需要更新组件的state，然后根据新的state重新渲染用户界面（不需要操作DOM）。
+3.getInitialState方法用于定义初始状态，也就是一个对象，这个对象可以通过this.state属性读取。状态变化时,this.setState方法就修改状态值，每次修改以后，自动调取this.render方法，再次渲染组件。
+state应该包含什么样的数据：UI交互会导致改变的数据
+state不应包含什么样的数据：
+    计算过的数据
+    组件
+    从props复制的数据
+state应包含最原始的数据，比如说时间，格式化应该交给展现层去做
+组件应在render方法里控制。
+
+
+React Props：
+1.state和props主要的区别在于props是不可变的，而state可以根据与用户交互来改变。这就是为什么有些容器组件需要定义state来更新和修改数据，而子组件只能通过props来传递数据。
+2.可以通过getDefaultProps()方法为props设置默认值(设置组件属性的默认值）.
+3.在应用中组合使用state和props：在父组件中设置state，并通过在子组件上使用props将其传到子组件上。
+4.this.props对象的属性与组件的属性一一对应，但是有一个例外，就是this.props.children属性，他表示组件的所有子节点。this.props.children的值有三种可能：如果当前组件没有子节点，它就是undefined；如果有一个子节点，数据类型是Object；如果有多个子节点，数据类型就是array。
+5.React提供一个工具方法React.Children来处理this.props.children，我们用React.Children.map来遍历子节点，而不用担心this.props.children的数据类型是undefined还是object。
+	var NoteList = React.createClass({
+	    render:function(){
+		return (
+	 	<ol>
+		    React.Children.map(this.props.children,function(child){
+			return <li>{child}</li>
+		    }
+		</ol>
+                );
+	    }
+	});
+	ReactDOM.render(
+	    <NoteList>
+		<span>hello</span>
+		<span>world</span>
+	    </NoteList>,
+	    document.body
+	);
+Props验证：
+Props验证使用propTypes，他可以保证应用组件被正常使用，React.PropTypes提供很验证器（validator）来验证传入数据是否有效。当props传入无效数据时，JS控制台会抛出警告。
+更多验证器：
+React.createClass({
+   propTypes:{
+	//可以声明prop为指定的JS基本数据类型，默认情况，这些数据时可选的
+   	optionalArray:React.PropTypes.array,
+	optionalBool:React.PropTypes.bool,
+	optionalFunc:React.PropTypes.func,
+	optionalNumber:React.PropTypes.number,
+	optionalObject:React.PropTypes.object,
+	optionalString:React.PropTypes.string,
+
+	//可以被渲染的对象 numbers，strings，elements或array
+	optionalNode:React.PropTypes.node,
+
+	//React元素
+	optionalElement:React.PropTypes.element,
+
+	//用JS的instanceof操作符声明prop为类的实例。
+	optionalMessage:React.PropTypes.instanceOf(Message),
+
+	//用enum来限制prop只接收指定的值
+	optionalEnum:React.PropTypes.oneOf(["News","Photos"])
+
+	//可以是多个对象类型中的一个
+	optionalUnion:React.PropTypes.oneOfType([
+		React.PropTypes.string,
+		React.PropTypes.number,
+		React.Proptypes.instanceOf(Message)
+	]),
+
+	//指定类型组成的数组
+	optionalArrayOf:React.PropTypes.arrayOf(React.PropTypes.number),
+
+	//指定类型的属性构成的对象
+	optionalObjectOf:React.PropTypes.objectOf(React.PropTypes.number),
+
+	//特定shape参数的对象
+	optionalObjectWithShape:React.PropTypes.shape({
+		color:React.PropTypes.string,
+		fontSize:React.PropTypes.number
+	}),
+
+	//任意类型加上"isRequired"来使prop不可空
+	requiredFunc:React.PropTypes.func.isRequired,
+
+	//不可空的任意类型
+	requiredAny:React.PropTypes.any.isRequired,
+
+	//自定义验证器。如果验证失败需要返回一个Error对象。不要直接使用‘console.warn'或抛异常，因为这样"oneOfType"会失效.
+	customProp:function(props,propName,componentName){
+		if(!/matchme/.test(props[propName])){
+			return new Error('Validation failed');
+		}
+	},
+
+	/* ... */
+   }
+})
+由于this.state和this.props都用于描述组件的特性，可能会产生混肴，区分的办法：this.props表示那些一旦定义，就不再改变的特性，而this.state是会随着用户互动而产生变化的特性。
+
+
+React组件API：
+1.设置状态：setState
+setState是异步的（不保证同步）
+setState会造成不必要的渲染
+合并nextState和当前state，并重新渲染组件。setState是React事件处理函数和请求回调函数中触发UI更新的主要方法。
+      setState(object nextState[,function callback])
+      nextState:将要设置的新状态，该状态会和当前的state合并
+      callback：可选参数，回调函数。该函数会在setState设置成功，且组件重新渲染后调用
+（1）不能在组件内部通过this.state修改状态，因为该状态会在调用setState（）后被替换
+（2）setState（）并不会立即改变this.state，而是创建一个即将处理的state。setState（）并不一定是同步的，为了提升性能React会批量执行state和DOM渲染
+（3）setState（）总是会触发一次组件重绘，除非在shouldComponentUpdate()中实现了一些条件渲染逻辑。
+
+2.替换状态：replaceState
+replaceState（）方法与setState（）类似，但是方法只会保留nextState中状态，原state不在nextState中的状态都会被删除。
+	replaceState(object nextState[,function callback])
+	nextState:将要设置的新状态，该状态会替换当前的state。
+	callback：可选参数，回调函数。该函数会在replaceState设置成功，且组件重新渲染后调用。
+
+3.设置属性：setProps
+（1）props相当于组件的数据流，它总是会从父组件向下传递至所有的子组件中。当和一个外部的JS应用集成时，可能会需要向组件传递数据或通知React.render（）组件需要重新渲染，可以使用setProps（）。
+（2）更新组件：可以在节点上再次调用React.render（），也可以通过setProps（）方法改变组件属性，触发组件重新渲染
+	setProps(object nextProps[,function callback])
+	nextProps:将要设置的新属性，该状态会和当前的props合并
+	callback：可选参数，回调函数。该函数会在setProps设置成功，且组件重新渲染后调用。
+
+4.替换属性：replaceProps
+replaceProps（）方法和setProps类似，但它会删除原有props。
+	repalceProps(object nextProps[,function callback])
+	nextProps:将要设置的新属性，该属性会替换当前的props
+	callback：可选参数，回调函数。该函数会在replaceProps设置成功，且组件重新渲染后调用。
+
+5.强制更新：forceUpdate
+（1）forceUpdate（）方法会使组件调用自身的render（）方法重新渲染组件，组件的子组件也会调用自己的render（）。但是，组件重新渲染时，依然会读取this.props和this.state，如果状态没有改变，那么React只会更新DOM。
+（2）forceUpdate（）方法适用于this.props和this.state之外的组件重绘（如：修改了this..state后），通过该方法通知React需要调用render（）
+（3）一般来说，应尽量避免使用forceUpdate（），而仅从this.props和this.state中读取状态并从React中出发render（）调用。
+	forceUpdate([function callback])
+	callback:可选参数，回调函数。该函数会在组件render（）方法调用后调用。
+
+6.获取DOM节点：findDOMNode
+如果组件已经挂载到DOM中，该方法返回对应的本地浏览器DOM元素。当render返回null或false时，this.findDOMNode()也会返回null。从DOM中读取值的时候，该方法很有用。例如：获取表单字段的值和做一些DOM操作。
+	DOMElement findDOMNode()
+	返回值:DOM元素DOMElement
+
+7.判断组件挂载状态：isMounted
+isMounted()方法用于判断组件是否已挂载到DOM中。可以使用该方法保证了setState（）和forceUpdate（）在异步场景下的调用不会出错。
+	bool isMounted()
+	返回值：true或false，表示组件是否已经挂载到DOM中。
+
+
+React组件生命周期
+组件的生命周期可分为三个状态
+    Mounting：已插入真实DOM
+    Updating：正在被重新渲染
+    Unmounting：已移出真实DOM
+生命周期的方法有：
+    componentWillMount（）：在渲染前调用，在客户端也在服务端。
+    componentDidMount（）：在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。如果想和其他JS框架一起使用，可以在这个方法中调用setTimeout,setInterval或者发送AJAX请求等操作（防止异步操作阻塞UI）。注：React本身没有任何依赖，完全可以不同jQuery，而使用其他库。
+    componentWillReceiveProps（object nextProps）:在组件接收一个新的prop时被调用。这个方法在初始化render时不会被调用。
+    shouldComponentUpdate（object nextProps, object nextState）:返回一个布尔值。在组件接收新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。可以在确认不需要更新组件时使用。    
+    componentWillUpdate（object nextProps, object nextState）:在组件接受新的props或者state但还没有render时被调用，在初始化时不会被调用。
+    componentDidUpdate（object prevProps, object prevState）:在组件完成更新后立即调用。在初始化时不会被调用。
+    componentWillUnmount（）:在组件从DOM中移除的时候立刻被调用。
+
+
+React AJAX
+（1）React组件的数据可以通过componentDidMount方法中的Ajax来获取，当从服务端获取数据库可以将数据存储在state中，再用this.setState方法重新渲染UI。
+（2）当使用异步加载数据时，在组件卸载前使用componentWillUnmount来取消未完成的请求。
+
+
+React表单与事件
+用户在表单填入的内容，属于用户跟组件的互动，所以不能用this.props.value读取，而是要定义一个onChange或其他事件的回调函数，通过event.target.value读取用户输入的值。textarea元素、select元素、radio元素都属于这种情况。
+（1）实时获取输入框的值：设置输入框input值value={this.state.data}。在输入框值发生变化时我们可以更新state，可以使用onChange实践来监听input的变化，并修改state。
+（2）在子组件上使用表单：onChange方法触发state的更新并将更新的值传递到子组件的输入框的value上重新渲染界面。
+（3）当需要从子组件中更新父组件的state时，需要在父组件通过创建事件句柄（handleChange），并作为prop传递到子组件上。
+React组件支持很多事件，除了Clcik事件以外还有KeyDown、Copy、Scroll等等。
+
+
+React Refs
+（1）React支持一种非常特殊的属性Ref，可以用来绑定到render()输出的任何组件上。这个特殊的属性允许你引用render()返回的相应的支撑实例（backing instance）,这样就可以确保在任何时间总是拿到正确的实例。
+（2）绑定一个ref属性到render的返回值上，在其他代码中，通过this.refs获取支撑实例。
+	<input ref="myInput" />
+	var input = this.refs.myInput;
+        var inputValue =input.value;
+        var inputRect = input.getBoundingClientRect();
+（3）通过使用this来获取当前React组件，或使用ref来获取组件的引用。
+  this.getDOMNode() \this.refs.myInput.getDOMNode()\this.findDOMNode(this.refs.myInput)\ReactDOM.findDOMNode(this.refs.myInput)获取DOM元素
+
+组件并不是真实的DOM节点，而是存在于内存之中的一种数据结构，叫做虚拟DOM（virtual DOM）。只有当它插入文档以后，才会变成真实的DOM。根据React的设计，所有的DOM变动，都先在虚拟DOM上发生，然后再将实际发生变动的部分，反映在真实DOM上，这种算法叫DOM diff，他可以极大的提高网页的性能表现。
+但是，有时需要从组件获取真实DOM的节点（例如获取文本输入框中用户的输入，这时就必须获取真实的DOM节点，虚拟DOM是拿不到用户输入的），这时要用到ref属性。
+在节点上添加ref属性，然后this.refs.[refName]就会返回这个真实的DOM节点。由于this.refs.[refName]属性获取的是真实的DOM，所以必须等到虚拟DOM插入文档以后，才能使用这个属性，否则会报错。
+
+
+学习网站：
+菜鸟教程:http://www.runoob.com/react/react-tutorial.html
+React中文社区：http://react-china.org/
+
+React组件之间交流：
+React 组件之间交流的方式，可以分为以下 3 种：
+【父组件】向【子组件】传值；
+【子组件】向【父组件】传值；
+没有任何嵌套关系的组件之间传值（PS：比如：兄弟组件之间传值）
+一、【父组件】向【子组件】传值
+主要是利用 props 来进行交流
+如果组件嵌套层次太深，那么从外到内组件的交流成本就变得很高，通过 props 传递值的优势就不那么明显了。（建议尽可能的减少组件的层次，就像写 HTML 一样，简单清晰的结构更惹人爱）
+二、【子组件】向【父组件】传值
+【子组件】控制自己的 state 然后告诉【父组件】的点击状态，然后在【父组件】中展示出来。
+依赖 props 来传递事件的引用，并通过回调的方式来实现的（回调函数）
+
+在 onChange 事件或者其他 React 事件中，你能够获取以下东西：
+【this】：指向你的组件
+【一个参数】：这个参数是一个 React 合成事件 ，SyntheticEvent。
+React 对所有事件的管理都是自己实现的，与我们之前使用的 onclick、onchange 事件不一样。从根本上来说，他们都是绑定到 body 上。
+三、没有任何嵌套关系的组件之间传值
+如果组件之间没有任何关系，组件嵌套层次比较深，或者你为了一些组件能够订阅、写入一些信号，不想让组件之间插入一个组件，让两个组件处于独立的关系。对于事件系统，这里有 2 个基本操作步骤：订阅（subscribe）/监听（listen）一个事件通知，并发送（send）/触发（trigger）/发布（publish）/发送（dispatch）一个事件通知那些想要的组件。
+3 种模式来处理事件：
+(1) Event Emitter/Target/Dispatcher
+特点：需要一个指定的订阅源
+// to subscribe
+otherObject.addEventListener(‘click’, function() { alert(‘click!’); });
+// to dispatch
+this.dispatchEvent(‘click’);
+(2) Publish / Subscribe
+特点：触发事件的时候，你不需要指定一个特定的源，因为它是使用一个全局对象来处理事件（其实就是一个全局广播的方式来处理事件）
+// to subscribe
+globalBroadcaster.subscribe(‘click’, function() { alert(‘click!’); });
+// to dispatch
+globalBroadcaster.publish(‘click’);
+(3) Signals
+特点：与Event Emitter/Target/Dispatcher相似，但是你不要使用随机的字符串作为事件触发的引用。触发事件的每一个对象都需要一个确切的名字（就是类似硬编码类的去写事件名字），并且在触发的时候，也必须要指定确切的事件otherObject.clicked.add(function() { alert(‘click’); });
+// to dispatch
+this.clicked.dispatch();
+
+如果你只想简单的使用一下，并不需要其他操作，可以用简单的方式来实现：
+// 简单实现了一下 subscribe 和 dispatch
+var EventEmitter = {
+    _events: {},
+    dispatch: function (event, data) {
+        if (!this._events[event]) { // 没有监听事件
+          return;
+        }
+        for (var i = 0; i < this._events[event].length; i++) {
+            this._events[event][i](data);
+        }
+    },
+    subscribe: function (event, callback) {
+      // 创建一个新事件数组
+      if (!this._events[event]) {
+        this._events[event] = [];
+      }
+      this._events[event].push(callback);
+    }
+};
+otherObject.subscribe('namechanged', function(data) { alert(data.name); });
+this.dispatch('namechanged', { name: 'John' });
+
+在处理事件的时候，需要注意：
+在 componentDidMount 事件中，如果组件挂载（mounted）完成，再订阅事件；当组件卸载（unmounted）的时候，在 componentWillUnmount 事件中取消事件的订阅。
+因为组件的渲染和销毁是由 React 来控制的，我们不知道怎么引用他们，所以EventEmitter 模式在处理组件的时候用处不大。
+pub/sub 模式可以使用，你不需要知道引用。
+
+
+
+subscribe 组件，文档地址：https://www.npmjs.com/package/react-subscribe
+fbemitter组件，文档地址：https://www.npmjs.com/package/fbemitter
+subscribe(订阅） listen（监听）
+如果组件之间没有任何关系，组件嵌套层次比较深，对于事件系统，有2个基本操作步骤：订阅/监听一个事件通知，并发送（send）/触发（trigger）/发布（publish）/发送（dispatch）一个事件通知那些想要的组件。
+
+使用流程;
+1、在需要监听的页面，订阅要监听的事件：
+import {SubEmiter,Emiter} from 'util';
+
+{/**eventName取值可以自定义，也可以是变量，listener取值为函数**/}
+<SubEmiter eventName="changeCrumb" listener= {this.onChangeCrumb}>
+                       {/**这里放置要监听事件的组件，如这里的Header**/}
+		<Header pagename="store" crumbPos={this.state.crumb}/>
+</SubEmiter>
+
+2、在事件发布页面
+ 
+比如点击按钮时发布一个自定义事件：
+
+import {SubEmiter,Emiter} from 'util'; 
+
+class BookList extends React.Component{
+
+	onClick = ()=>{
+            //这里的changeCrumb要和上面的eventName一致；emit的第二个参数可以传递给监听函数
+		Emiter.emit("changeCrumb",{"data":'123'});
+	}
+           render(){
+            <button name="btn" className="search_btn iconfont" onClick={this.onClick}>&#xe8e0;</button>
+           }
+}
+
+
+
+
+react创建组件的三种方式：
+1.函数式定义的无状态组件
+2.es5原生方式React.createClass定义的组件
+var InputControlES5 = React.createClass({
+    propTypes: {//定义传入props中的属性各种类型
+        initialValue: React.PropTypes.string
+    },
+    defaultProps: { //组件默认的props对象
+        initialValue: ''
+    },
+    // 设置 initial state
+    getInitialState: function() {//组件相关的状态对象
+        return {
+            text: this.props.initialValue || 'placeholder'
+        };
+    },
+    handleChange: function(event) {
+        this.setState({ //this represents react component instance
+            text: event.target.value
+        });
+    },
+    render: function() {
+        return (
+            <div>
+                Type something:
+                <input onChange={this.handleChange} value={this.state.text} />
+            </div>
+        );
+    }
+});
+InputControlES6.propTypes = {
+    initialValue: React.PropTypes.string
+};
+InputControlES6.defaultProps = {
+    initialValue: ''
+};
+3.es6形式的extends.React.Component定义的组件
+class InputControlES6 extends React.Component {
+    constructor(props) {
+        super(props);
+
+        // 设置 initial state
+        this.state = {
+            text: props.initialValue || 'placeholder'
+        };
+
+        // ES6 类中函数必须手动绑定
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            text: event.target.value
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                Type something:
+                <input onChange={this.handleChange}
+               value={this.state.text} />
+            </div>
+        );
+    }
+}
+InputControlES6.propTypes = {
+    initialValue: React.PropTypes.string
+};
+InputControlES6.defaultProps = {
+    initialValue: ''
+};
+
+
+React.createClass与React.Component区别
+1.函数this自绑定:
+React.createClass创建的组件，其每一个成员函数的this都有React自动绑定，任何时候使用，直接使用this.method即可，函数中的this会被正确设置。React.Component创建的组件，其成员函数不会自动绑定this，需要开发者手动绑定，否则this不能获取当前组件实例对象。
+React.Component有三种手动绑定方法：可以在构造函数中完成绑定，也可以在调用时使用method.bind(this)来完成绑定，还可以使用arrow function来绑定。
+ constructor(props) {
+       super(props);
+       this.handleClick = this.handleClick.bind(this); //构造函数中绑定
+  }
+    <div onClick={this.handleClick.bind(this)}></div> //使用bind来绑定
+    <div onClick={()=>this.handleClick()}></div> //使用arrow function来绑定
+2.组件属性类型propTypes及其默认props属性defaultProps配置不同:
+React.createClass在创建组件时，有关组件props的属性类型及组件默认的属性会作为组件实例的属性来配置，其中defaultProps是使用getDefaultProps的方法来获取默认组件属性的
+const TodoItem = React.createClass({
+    propTypes: { // as an object
+        name: React.PropTypes.string
+    },
+    getDefaultProps(){   // return a object
+        return {
+            name: ''    
+        }
+    }
+    render(){
+        return <div></div>
+    }
+})
+React.Component在创建组件时配置这两个对应信息时，他们是作为组件类的属性，不是组件实例的属性，也就是所谓的类的静态属性来配置的。
+class TodoItem extends React.Component {
+    static propTypes = {//类的静态属性
+        name: React.PropTypes.string
+    };
+
+    static defaultProps = {//类的静态属性
+        name: ''
+    };
+
+    ...
+}
+3.组件初始状态state的配置不同
+React.createClass创建的组件，其状态state是通过getInitialState方法来配置组件相关的状态；
+React.Component创建的组件，其状态state是在constructor中像初始化组件属性一样声明的。
+4.Mixins的支持不同
+Mixins(混入)是面向对象编程OOP的一种实现，其作用是为了复用共有的代码，将共有的代码通过抽取为一个对象，然后通过Mixins进该对象来达到代码复用
+React.createClass在创建组件时可以使用mixins属性，以数组的形式来混合类的集合。
+var SomeMixin = {  
+  doSomething() {
+
+  }
+};
+const Contacts = React.createClass({  
+  mixins: [SomeMixin],
+  handleClick() {
+    this.doSomething(); // use mixin
+  },
+  render() {
+    return (
+      <div onClick={this.handleClick}></div>
+    );
+  }
+});
+但是遗憾的是React.Component这种形式并不支持Mixins，至今React团队还没有给出一个该形式下的官方解决方案；但是React开发者社区提供一个全新的方式来取代Mixins,那就是Higher-Order Components
+
+
+Mixin含义：一组方法，
+目的： 横向抽离出组件的相似代码
+ <script type="text/jsx">  
+        var BindingMixin = {  
+            handleChange: function (key) {  
+                var that = this  
+                return function (event) {  
+                    var newState = {}  
+                    newState[key] = event.target.value  
+                    that.setState(newState)  
+                }  
+            }  
+        };  
+        var BindingExmple = React.createClass({  
+            mixins:[BindingMixin],  
+            getInitialState : function () {  
+                return {  
+                    text:'',  
+                    content:''  
+                }  
+            },  
+            render: function () {  
+                return <div>  
+                    <input type="text" placeholder="输入内容" onChange={this.handleChange('text')} />  
+                    <textarea onChange={this.handleChange('content')}></textarea>  
+                    <p>{this.state.text}</p>  
+                    <p>{this.state.content}</p>  
+                </div>  
+            }  
+        });  
+        React.render(<BindingExmple></BindingExmple>, document.body);  
+    </script>  
+
+
+
+//接口获取数据
+	componentDidMount(){
+		(async () => {
+			try {
+				let response = await fetch(`${config.baseUrl}/self`, {
+					method: 'GET'
+				});
+				let data = await response.json();
+				if (response.status === 200) {
+					 console.log('通过es6 fetch获取');
+					console.log(data)
+				} else {
+				 
+				}
+			} catch (e) {
+				console.log('Fetch error:', e);
+			}
+		})();
+       //或者直接使用jquery
+	   $.get(`${config.baseUrl}/self`,function(data){
+		   console.log('通过jquery获取');
+		   console.log(data);
+	   })
+    }
+
+{/*var myFetchOptions = {
+			method: 'GET'
+		};
+		fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=" + this.props.params.uniquekey, myFetchOptions).then(response => response.json()).then(json => {
+			this.setState({newsItem: json});
+			document.title = this.state.newsItem.title + " - React News | React 驱动的新闻平台";
+		});
+		*/}
+
+
+
+classnames:
+var classNames = require('classnames');
+var Button = React.createClass({
+  render () {
+    var btnClass = classNames({
+      'btn': true,
+      'btn-pressed': this.state.isPressed,
+      'btn-over': !this.state.isPressed && this.state.isHovered
+    });
+    return <button className={btnClass}>{this.props.label}</button>;
+  }
+});
+
+
+进阶使用方法：shape() 和 arrayOf()
+propTypes: {
+  myObject: React.PropTypes.shape({
+    text: React.PropTypes.string,
+    numbers: React.PropTypes.arrayOf(React.PropTypes.number),
+  })
+}
+
+propTypes: {
+    myArray: React.PropTypes.arrayOf(
+        React.propTypes.shape({
+            name: React.propTypes.string.isRequired,
+            age: React.propTypes.number.isRequired,
+            married: React.propTypes.bool
+        })
+    )
+}
+
+class component extends React.Component{}
+component.defaultProps = {}
+component.propTypes = {name:React.PropTypes.string}
+
+
+路由参数：
+this.props.location.query.bar
+this.props.params.paramName
+<Link to={{ pathname: '/hello', query: { name: 'ryan' } }}>
+
+
+定时器
+ <Timer interval={1000} onTimer={this.onTimer} />
+ onTimer = () => {
+        this.setState({cd: this.state.cd - 1});
+    };
+
+监听
+componentDidMount: function() {
+    window.addEventListener('resize', this.handleResize);
+  },
+
+  componentWillUnmount: function() {
+    window.removeEventListener('resize', this.handleResize);
+
+
+this.refs.root
+ReactDOM.findDOMNode(this.refs.sub)
+this.state.list.concat([4])
+[0].concat(this.state.list)
+newList.pop()
+
+module.exports = () => {
+  const data = { users: [] }
+  // Create 1000 users
+  for (let i = 0; i < 1000; i++) {
+    data.users.push({ id: i, name: `user${i}` })
+  }
+  return data
+}
+
+this.context.router.push()跳转到相应页面
+// 必须给组件定义一个包含router属性的contextTypes，使得组件中可以通过this.context.router来使用React Router提供的方法
+组件.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
+
+
+var addEventListener = require("add-dom-event-listener")
+var handler = addEventListener(document.body,"click",function(){})
+handler.remove()
+在 组件卸载的生命周期里面, 把在组件外部定义的变量 设置为 null, 这样JS的垃圾回收机制就会把 组件外部定义的变量 回收. 而不造成 内存泄露.如果在 getinitialState 里面注册的事件, 需要在 componentWillUnmount 里面清除掉, 否则容易造成内存泄露
+componentDidMount(){mtdatastore.subscribe(this)}
+componentWillUnmont(){mydatastore.unsubscribe(this)}
+const cancelablePromise = makeCancelable(
+  new Promise(r => component.setState({...}}))
+);
+cancelablePromise
+  .promise
+  .then(() => console.log('resolved'))
+  .catch((reason) => console.log('isCanceled', reason.isCanceled));
+cancelablePromise.cancel(); // Cancel the promise
+  
+this.setState(Object.assign({},{data})),()=>console.log(this.state))
+this.setState({data:data},function(){console.log(this.state.data)}).call(this,data)
+shouldComponentUpdate(){
+	if(){return true}
+	if(){return true}
+	return false;
+}

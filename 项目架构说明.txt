@@ -1,0 +1,142 @@
+rudux框架
+react-router-redux
+ant-design（UI组件库）
+express基础
+
+src：存放项目业务代码
+tools：构件处理逻辑
+.babelrc：项目的编译设置
+.eslintrc：代码风格设置
+package.json：项目依赖
+webpack.common：公有环境配置
+webpack.dev：开发环境配置
+webpack.dll：项目依赖的公共类库
+webpack.prod.config：生产环境打包配置
+
+src：
+action：redux中的action
+assets：静态图片、字体库
+compnents：react组件
+config：配置文件：后台主机地址等
+constant：存放一些常量，action常量
+reducers：redux中的reducer层
+routes:路由
+index.jsx:入口文件
+index.html
+router.jsx
+store.js
+
+tools:
+build.js
+server.js
+
+开发环境搭建：
+安装node
+修改配置，使得从淘宝仓库下载依赖
+启动开发环境：
+进入应用根目录xn-app，安装应用依赖
+cnpm i或者npm i
+num run dev
+
+
+npm:
+scripts：可以构建自己的命令。用npm run+命令。比如打包、测试、发布命令等。
+--save-dev表示非运行时依赖，--save表示是运行时依赖
+
+组件：有状态组件和无状态组件。（UI组件、容器组件）
+diff差异比较算法
+
+路由决定着页面的跳转
+路由嵌套：局部页面更新
+路由匹配：匹配浏览器地址上的url，包括参数
+路由模式：browerhistory hashhistory
+路由状态管理：react-router-redux
+
+antdesign（UI库）
+具有同一的风格
+
+lodash：一个具有一致接口、模块化、高性能等特性的JS工具库
+<script src="lodash.js"></script>
+AMD:require(['lodash'],function(_){});
+npm:$ {sudo -H} npm i -g npm      $ npm i --save lodash
+Node.js/io.js:var _=require('lodash')  var array=require('lodash/array'); var chunk=require('lodash/array/chunk');
+
+
+用户交互动作-react组件-生成action描述对象-dispatch-store-发送旧状态-reducers-发送新状态给store
+响应式布局
+
+@autobind是es7语法，需要配置babel，用以简化this绑定
+@connect是rudux提供一个注解，他可以将store里面存放的状态转化成它所包的装组件需要的props属性，组件会根据配置只处理自己关心的状态。
+
+
+webpack
+webpack-dev-server基于express的web服务器
+热加载插件：HotModuleReplacementPlugin
+entry：代表了js入口文件
+output：代表了文件输出路径
+resolve：配置了怎么寻找模块
+module.loaders：指明了不同的文件类型用什么加载插件去加载
+
+
+
+.babelrc：
+	{
+		"presets":[
+		     "es2015", //编译es6
+		     "react",  //编译jsx
+		     "stage-0" //对es7一些提案的支持，让babel可以编译es7代码
+		],
+		"plugins":[]
+	}
+presets:配置表明了要将源js文件编译成什么(编码规则）
+  es2015是要将es6语法编译成es5语法的
+  react是用来编译react语法的
+plugins：配置打包工具使用的插件
+
+
+后台数据模拟：
+node模块imutator，基于express来做的，用来模拟后台服务响应前端请求，要注意的是需要配置跨域和同源访问。
+
+
+
+workspace下是大家各自的私人目录；
+document是不属于具体项目的文档目录，各职能小组的相关文档可以放这里面；projects是除新平台之外的项目目录，包括文档和代码，长江社门户网站一类的项目文档和代码放在这里
+
+
+babel6整体插件化了，如果想使用es6语法，需要手动加载相关插件
+安装babel6
+	npm install babel-core --save
+安装babel5
+	npm install babel@5 --save
+如果想使用es6语法，必须安装一个插件：
+	npm install babel-preset-es2015
+然后配置.babelrc文件的presets，就可以写es6代码了
+
+
+转码规则：
+# ES2015转码规则
+$ npm install --save-dev babel-preset-es2015
+# react转码规则
+$ npm install --save-dev babel-preset-react
+# ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+$ npm install --save-dev babel-preset-stage-0
+$ npm install --save-dev babel-preset-stage-1
+$ npm install --save-dev babel-preset-stage-2
+$ npm install --save-dev babel-preset-stage-3
+然后将这些规则加入.babelrc。所有Babel工具和模块的使用，都必须先写好.babelrc
+命令行转码：babel-cli
+
+
+webpack模块热替换：
+
+
+
+
+
+
+
+
+
+
+
+

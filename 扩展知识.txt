@@ -1,0 +1,691 @@
+npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl  https://npm.taobao.org/dist --global
+出版行业信息交换国家标准，最新的是GB/T 30330-2013
+
+
+UED:用户体验设计（User Experience Design) 进行产品策划的主力之一
+UED团队包括：交互设计师、视觉设计师、用户体验设计师、用户界面设计师、前端开发工程师
+CMMS:计算机维护管理系统。=数据库+数据分析软件+综合服务
+
+
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+'微软雅黑', Arial, Helvetica, sans-serif
+p{font-size:12pt;line-height:30px;text-index:2em}
+
+<div class="no-supper">
+	您的浏览器版本较低，可能存在安全风险，请升级到最新IE浏览器。亦可下载 <a href="http://se.360.cn/" target="_blank">360安全浏览器</a> 或 <a href="https://chrome.google.com/" target="_blank">Google Chrome</a>
+</div>
+<style type="text/css">
+	body{
+		padding:0;
+		margin:0;
+	}
+	.no-supper{
+		min-height: 100px;
+		text-align: center;
+		line-height:100px;
+		background-color:#FFBD91;
+		color:#000;
+	}
+
+	.no-supper a{
+	      color:#45a7ff;
+	}
+</style>
+
+<noscript></noscript>
+
+image-set() = image-set( <image-set-option># )
+<image-set-option> = [ <image> | <string> ] <resolution>
+image-set() 可以根据用户设备的分辨率匹配合适的图像。为不同的设备分配合适得图像;
+div {
+    background-image: image-set( "test.png" 1x, "test-2x.png" 2x, "test-print.png" 600dpi );
+}
+上述代码将会为普通屏幕使用test.png，为高分屏使用test-2x.png，如果更高的分辨率则使用 test-print.png，比如印刷
+需要注意的是，目前这些浏览器支持的语法是：image-set( <url> | <string> )
+div {
+    background-image: image-set( url(test.png) 1x, url(test-2x.png) 2x );
+}
+
+.css {
+    background: url(images/bg.jpg) no-repeat center;
+    background: -webkit-image-set(
+    url(images/bg.jpg) 1x,     //支持image-set普通屏
+    url(images/bg-2x.jpg) 2x); //支持image-set的Rentinan
+}
+
+
+Web app与Native App：
+webapp优点：1.跨平台：所有系统都能运行
+ 	    2.免安装：打开浏览器，就能使用
+	    3.快速部署：升级只需在服务器更新代码
+	    4.超链接：可以与其他网站互联，可以被搜索引擎检索
+缺点：1.体验差：手机APP的操作流畅性远超网站。
+      2.业界不支持：所有公司的移动端开发重点，几乎都是原生app。
+      3.用户不在乎：大多数用户都选择使用手机app，而不是网站。
+Web app输给Native app的地方，不是界面（UI），而是操作性能，主要是互动（iteraction）和动画（animation）这两方面，会出现卡顿（jank），用户会感觉到明显的时滞，有时简直慢的难以忍受。原因是：
+（1）Web基于DOM，而DOM很慢：浏览器打开网页时，需要解析文档，在内存中生成DOM结构，如果遇到复杂的文档，这个过程是很慢的。
+（2）DOM拖慢JS：所有的DOM操作都是同步的，会堵塞浏览器。JS操作DOM时，必须等前一个操作结束，才能执行后一个操作。只要有一个操作卡顿，整个网页就会短暂失去响应。浏览器重绘网页的频率是60FPS（即16毫秒/帧），JS做不到在16毫秒内完成对DOM操作，因此产生了跳帧。用户体验上的不流畅、不连贯就源于此。
+（3）网页是单线程的。现在的浏览器对于每个网页，只用一个线程处理。所有工作都会在这一个线程上完成，包括布局、渲染、JS执行、图像解码等等。
+（4）网页没有硬件加速：网页都是有CPU处理的，没有GPU进行图形加速。
+这个对PC还不至于造成严重的性能问题，但是手机的硬件资源相对有限，用户互动又频繁，结果跟Native app差距大。
+
+
+五中前端开发必备的调试技术：http://www.cnblogs.com/liuyanan/p/5503969.html
+rollup.js
+emberjs
+requirJS
+backbone.js
+vue.js
+zepto.js
+knockoutjs
+sea.js
+artTemplate
+tmodjs
+amazeui模板
+MUI
+Ionic
+Websocket
+fis3
+echarts（js图表库）
+highcharts
+React Native
+firebug（开发工具）
+
+
+WeX5在揉合PhoneGap和Bootstrap等主流技术的基础上，对性能进一步做了深度优化，不但完全具备Native App对本地资源的调用能力，性能体验也不输原生；WeX5所开发出来的app具备完全的跨端运行能力，可以无需任何修改直接运行在各种前端环境上。
+
+
+CSS渐进增强：就css而言，渐进增强的对象时一些现代浏览器，渐进增强的一些属性主要是CSS3的一些特性，或是IE6等不支持的一些属性，或是其他一些特殊情况。在高级浏览器中使用CSS3而低级浏览器只保证最基本的功能。例如：CSS3的一些新属性、first-child、：focus，理论上，存在了表现上的兼容性，就可以应用“渐进增强”原则，体现主流浏览器的优势。
+渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。
+
+
+
+在ajax应用中，通常一个页面要同时发送多个请求，如果只有一个XMLHttpRequest对象，前面的请求还未完成，后面的就会把前面的覆盖掉，如果每次都创建一个新的XMLHttpRequest对象，就会造成浪费。解决的办法就是创建一个XMLHttpRequest的对象池，如果池里有空闲的对象，则使用此对象，否则将创建一个的对象。
+   http://www.jb51.net/article/9547.htm
+防止重复发送Ajax请求：http://www.jb51.net/article/105630.htm
+		      http://www.jb51.net/article/77571.htm
+
+
+
+js与jquery终止正在发送的ajax请求：
+核心：调用XMLHttpRequest对象上的abort方法。
+jQuery的ajax方法有自己的超时时间设置参数：
+$.ajax({
+   type:"POST",
+   url:"",
+   data:"",
+   dataType:"",
+   timeout:5000,
+   success:function(){}
+})
+1.$.get返回的数据类型是XMLHttpRequest。$.post\$.ajax\$.getJSON\$.getScript也同样。
+2.XMLHttpRequest对象有abort（）方法，也可以自己手动去调用abort方法。
+   var xhr = $.ajax({}); xhr.abort();
+3.对于原生xhr:
+    xmlHttp.open("POST","theUrl",true);
+    xmlHttp.onreadystatechange = function(){..//得到响应之后的操作}
+    xmlHttp.send();
+    //设置8秒后检查xmlHttp对象所发送的数据是否得到响应
+    setTimeout("CheckRequest()","8000");
+    function  CheckRequest(){
+       if(xmlHttp.readyState！=4){
+           alert("响应超时");
+ 	   xmlHttp.close（）；
+       }
+    }
+    
+
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="shortcut icon" href="" type="image/x-icon">
+<meta http-equiv = "Access-Control-Allow-Origin" content="*.freshfresh.com">
+
+
+jQuery分页排序插件jPList:  
+http://www.jq22.com/jquery-info452
+
+
+flexslider（轻量的响应式jquery内容滚动插件）
+响应式效果需要再 IE10+、Chrome、Firefox 和 Safari 等现代浏览器中才支持。
+flexslider插件的详细设置参数（http://blog.csdn.net/hqhtys1/article/details/39992425）
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
+    $j(".flexslider").flexslider({
+    	animation:"slide",
+	slideDirection:"horizontal",
+	slideshow:true,
+	directionNav:false,
+	pauseOnAction:false
+    })
+})
+
+
+
+
+原声JS增加、删除、替换类名：
+function hasClass( elements,cName ){    
+    return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") );   
+};    
+function addClass( elements,cName ){    
+    if( !hasClass( elements,cName ) ){    
+        elements.className += " " + cName;    
+    };    
+};    
+function removeClass( elements,cName ){    
+    if( hasClass( elements,cName ) ){    
+        elements.className = elements.className.replace( new RegExp( "(\\s|^)" + cName + "(\\s|$)" ), " " );  
+    };    
+};  
+
+
+排序：
+方法一：sort（）
+function onSort(){
+     var arr = $(".arr");
+     arr.sort(function(a,b){
+	return a.innerHTML>a.innerHTML?1:-1;
+     })
+     $(".bot").empty().append(arr);
+}
+方法二：
+ $(function() {
+     var ic = $(".item_content");
+     var divs = ic.find("div");
+     var arr = divs.get();
+     arr.sort(function(a, b) {
+         var ai = parseFloat($(a).attr("index"), 10);
+         var bi = parseFloat($(b).attr("index"), 10);
+         if (ai > bi) {
+            return 1;
+         } else if (ai < bi) {
+            return -1;
+         } else {
+            return 0;
+         }  
+      });
+          ic.append(arr);
+});
+
+
+删除字符串里面的所有空格
+    function trim(str){
+    	return str.replace(/[ ]/g,""); //去除字符算中的空格
+    }
+删除字符算左右两边的空格，不删除字符窜里面的空格
+    function leftright(str){
+    	return str.replace(/(^\s*)|(\s*$)/g,""); //去除字符窜的左右空格
+    }
+删除字符串头尾空格：$.trim(str)
+
+
+
+
+清除浏览器下拉框默认样式
+方法一：
+原理：将浏览器默认的下拉框样式清除，然后应用上自己的，再附一张向右对齐小箭头的图片即可。
+select {  
+  border: solid 1px #000;  
+
+  appearance:none;  
+  -moz-appearance:none;  
+  -webkit-appearance:none;  
+
+  background: url("bj.png") no-repeat scroll right center transparent;  
+
+  padding-right: 14px;  
+}  
+select::-ms-expand { display: none; }
+
+方法二：
+  原理：为其添加一个父容器，容器是用来覆盖小箭头的，然后为select添加一个向右的小偏移或者宽度大于父级元素。设置父级的CSS属性为超出部分不可见，即可覆盖即小箭头。然后再为父级容器添加背景图片即可。overflow: hidden并不能隐藏下拉框的显示。
+
+注：旧版IE多用此方法。因为 IE8/9并不支持  appearance:none  CSS属性。
+
+css样式：
+#parent {  
+    background: url('yourimage') no-repeat;  
+    width: 100px;  
+    height: 30px;  
+    overflow: hidden;  
+}  
+  
+#parent select {  
+    background: transparent;  
+    border: none;  
+    padding-left: 10px;  
+    width: 120px;  
+    height: 100%;  
+} 
+
+
+
+
+让老浏览器兼容新的h5标签：
+<!--[if lt IE 9]>
+     <script type="text/javascript">
+         var e=("abbr,article,aside,audio,canvas,datalist,details,"+
+         "figure,footer,header,hgroup,mark,menu,meter,nav,output,"+
+           "progress,section,time,video").split(',');
+            for(var i=0;i<e .length;i++){
+		document.createElement(e[i]);
+             }
+     </script>
+<![endif]-->
+或引入Html5.js，如CDN方式：
+<!--[if lt IE 9]>
+
+<script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<![endif]-->
+
+
+
+IE8不支持：：，支持：，所以写清除浮动时写：after
+
+
+CSS3属性兼容：
+《border-radius》
+chrome：
+border-radius: 50%;
+IE6-8:
+border-radius: 50%;//不支持 border-bottom-left-radius: 10%;
+behavior: url(ie-CSS3.htc);
+
+《box-shadow》
+chrome：	
+box-shadow: 10px 10px 10px orange;
+IE6-8:	
+box-shadow: 10px 10px 10px orange;//只显示黑色
+behavior: url(ie-css3.htc);
+
+《text-shadow》
+text-shadow: 10px 10px 2px blue;	
+text-shadow: 10px 10px 2px blue;
+behavior: url(ie-css3.htc);//IE9--2种都不支持
+
+《opacity》
+opacity: 0.2;	
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+
+《background-size》	
+background:url('XXX/XXX.jpg');
+background-size:cover;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+src='XXX/XXX.jpg',
+sizingMethod='scale')
+
+《rgba》
+background: rgba(255,0,255,.1);	
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19ff00ff,endColorstr=#19ff00ff);
+
+
+
+判断窗口大小变化：
+window.addEventListener("resize",function(){
+
+})
+
+
+滚动兼容ie：
+$(window).scroll(function(){
+	if($(window).scrollTop()>=){}
+})
+不能用$(document).scroll(),当用户滚动元素中到一个不同的地方时，scroll事件将发送到这个元素。它适用于window对象，但也可滚动框架与CSS overflow属性设置为scroll的元素.
+
+
+
+阻止事件默认行为：
+function stopDefault(e){
+   if(e&&e.preventDefault){e.preventDefault()}
+   else{window.event.returnValue=false}
+   return false;
+}
+阻止事件冒泡：
+function stopBubble(e){
+   if(e && e.stopPropagation){e.stopPropagation();}
+   else{window.event.cancelBubble = true;}
+}
+
+
+复选框
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+/*实现复选框外边框*/
+ .checkboxouter {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    background-color:#fff;
+    display: block;
+    border:2px solid lightgrey;
+    transition: all .5s;
+}
+
+/*原声的checkbox隐藏*/
+ input[type="checkbox"] {
+    opacity: 0;
+    background : red;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+/*就是这个东东实现复选框里的对勾*/
+ .checkbox {
+    position: absolute;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    transform: rotate(45deg);
+    transform-origin: -35% 30%;
+    transition: all 0.2s;
+}
+/*label来激活单击事件*/
+ input[type="checkbox"]:checked ~.checkbox {
+    /*transition: all 0.3s;*/
+    border-bottom:3px solid #27ae60;
+    border-right:3px solid #27ae60;
+}
+<div class="container">
+	<div class="checkboxouter">
+		<input type="checkbox">
+		<label class="checkbox"></label>
+
+	</div>
+</div>
+
+
+字体设置：
+ var docEl = document.documentElement,
+    //当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，
+    //注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。
+    //总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function() {
+        //设置根字体大小
+        var tagFont = 20 * (docEl.clientWidth / 320)
+        if( tagFont > 30){
+            docEl.style.fontSize =  '30px';
+        }else{
+            docEl.style.fontSize = 20 * (docEl.clientWidth / 320) + 'px';
+        } 
+    };
+//绑定浏览器缩放与加载时间
+window.addEventListener(resizeEvt, recalc, false);
+document.addEventListener('DOMContentLoaded', recalc, false);
+
+
+React购物车
+var List = React.createClass({
+	getInitialState: function(){
+		return{
+			count: 0
+		};
+	},
+
+	componentDidMount: function(){
+		var _that = this;
+		AsyncStorage.getAllKeys(function(err,keys){
+			if (err) {
+
+			}
+			_that.setState({
+				count: keys.length
+			});
+		});
+	},
+
+	render: function(){
+		var list = [];
+		for (var i in Model) {
+			if (i % 2 === 0) {
+				var row = (
+					<View style = {styles.row}>
+						<Item  
+							url = {Model[i].url}
+							title = {Model[i].title}
+							press = {this.press.bind(this, Model[i])}>
+						</Item>
+
+						<Item 
+							url = {Model[parseInt(i)+1].url}
+							title = {Model[parseInt(i)+1].title}
+							press = {this.press.bind(this, Model[parseInt(i)+1])}>
+						</Item>
+					</View>
+				);
+				list.push(row);
+			}
+		}
+
+		var count = this.state.count;
+		var str = null;
+		if (count) {
+			str = '， 共' + count + '件商品';
+		}
+
+		return(
+			<ScrollView style = {{marginTop:10}}>
+				{list}
+				<Text onPress = {this.goPay} style = {styles.btn}>去结算{str}</Text>
+			</ScrollView>
+		);
+	},
+
+	goPay:function(){
+		this.props.navigator.push({
+			component: TestCtrl,
+			title: '购物车'
+		});
+	},
+
+	press: function(data){
+		var count = this.state.count;
+		count++;
+		this.setState({
+			count:count
+		});
+
+		AsyncStorage.setItem('SP-'+this.genId()+'-SP', JSON.stringify(data),function(err){
+			if (err) {
+
+			}
+		});
+	},
+
+	genId:function(){
+		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+			var r = Math.random() * 16 | 0,
+			v = c == 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		}).toUpperCase();
+	},
+});
+
+
+
+
+(function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+
+换行符：replace(/\n/g, "<br/>")
+将字符串中的所有标签去掉：replace(/<.*?/ig,"")
+将字符串中的标签生效：<div dangerouslySetInnerHTML={{__html: page}} />
+
+
+返回的日期格式中有T是因为该日期是UTC时间格式：ISO8601扩展格式为：YYYY-MM-DDTHH:mm:ss.sssZ，这个是国际标准的时间格式，解决方法：日期要格式化
+new Date(你获得的日期).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+方案1（适用于中国标准时间）：
+var date = new Date(+new Date()+8*3600*1000).toISOString().replace(/T/g,' ').replace(/\.[\d]{3}Z/,'')  
+方案2（只用于题目中所述的格式转换）：
+var date = new Date().toLocaleString().replace(/[年月]/g,'-').replace(/[日上下午]/g,'');
+方案3（最准确但最麻烦，不推荐）：
+var date = new Date();  
+var result = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds(); 
+
+
+sidebar高度适应 
+html,body{
+height:100%;}
+siderbar{position:absolute;height:100%;min-height:100%;}
+或者
+body{display:block;position:relative;height:100%;min-height:100%;max-height:100%}
+或者
+body{position:relative;overflow:hidden}
+sidebar{padding-bottom:999rem;margin-bottom:-999rem;}
+
+.sidebar{position:absolute;top:..,left:0;width:200px;
+content{display:block;margin-left:200px;min-height:...
+
+
+
+fetch不支持跨域，但支持jsonp
+
+判断复选框是否被选中：$().is(":checked")
+
+
+将json字符串显示在html中：
+function syntaxHighlight(json) {
+    if (typeof json != 'string') {
+        json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+ pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+    .string { color: green; }
+    .number { color: darkorange; }
+    .boolean { color: blue; }
+    .null { color: magenta; }
+    .key { color: red; }
+
+<pre id="result"></pre>
+$('#result').html(syntaxHighlight(res));
+
+{
+//str含有HTML标签的文本
+str = str.Replace("<","&lt;");
+str = str.Replace(">","&gt;");
+str = str.Replace(" ","&nbsp;");
+str = str.Replace("\n","<br>");
+str = str.Replace("&","&amp;");
+return str;
+}
+
+var p1 = get(url);
+var p2 = get(url);
+Promise.all([p1,p2]).then(values=>{console.log(values})
+
+ps -ef|grep node  //找出占用端口的程序
+kill  -9  5371  5378 
+
+
+边框上的三角形
+*：before{
+    content:"";
+    display:block;
+    position:absolute;
+    left:50%;
+    margin-left:-3px;
+    bottom:0;
+    width:0;
+    height:0;
+    border:3px dashed #00a1d6;
+    border-bottom-style:solid;
+    border-top:0;
+    border-left-color:transparent;
+    border-right-color:transparent;
+  }
+
+
+
+window.parent : 返回当前窗口的父窗口。
+
+在应用有frameset或者iframe的页面时，parent是父窗口，top是最顶级父窗口（有的窗口中套了好几层frameset或者iframe），self是当前窗口， opener是用open方法打开当前窗口的那个窗口。
+window.self
+功能：是对当前窗口自身的引用。它和window属性是等价的。
+
+语法：window.self
+
+注：window、self、window.self是等价的。
+
+window.top
+
+功能：返回顶层窗口，即浏览器窗口。
+
+语法：window.top
+
+注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。
+
+window.parent
+
+功能：返回父窗口。
+
+语法：window.parent
+
+注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。
+
+在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。
+
+判断当前窗口是否在一个框架中：
+
+<script type="text/JavaScript">
+var b = window.top!=window.self;
+document.write( "当前窗口是否在一个框架中："+b );
+</script>
+
+你应当将框架视为窗口中的不同区域，框架是浏览器窗口中特定的部分。一个浏览器窗口可以根据你的需要分成任意多的框架，一个单个的框架也可以分成其它多个框架，即所谓的嵌套框架。
+
+

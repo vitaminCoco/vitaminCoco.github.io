@@ -1,0 +1,275 @@
+安装命令：
+$npm install --save react-router
+
+用es6转码器时：
+import {Router,Route,Link} from ‘react-router’
+不用es6转码器时：
+var Router = require(’react-router').Router
+var Route = require('react-router').Route
+var Link = require('react-router').Link
+或者：
+<script src="https://unpkg.com/react-router/umd/ReactRouter.min.js"></script>
+
+
+基本用法
+1.React-Router:官方维护的唯一可选的路由库，通过管理URL，实现组件的切换和状态的变化。
+2.使用时，路由库Router就是React的一个组件。
+	import {Router} from 'react-router';
+	render(<Router/>,document.getElementById("app")};
+3.Router组件本身只是一个容器，真正的路由要通过Route组件定义。
+	import {Router,Route,hashHistory} from 'react-router'
+	render(
+	    <Router history = {hashHistory}>
+                <Route path = "/" component={App}/>
+            </Router>
+	),document.getElementById("app"))
+4.Router组件有一个参数history，它的值hashHistory表示，路由的切换有URL的hash变化决定，即URL的#部分发生变化。比如用户访问http://www.example.com/,实际会看到的是http://www.example.com/#/。
+5.Route组件定义了URL路径与组件的对应关系，可以同时使用多个Route组件。
+	<Router history = {hashHistory}>
+             <Route path="/" component = {App}/>
+             <Route path="/repos" component = {Repos}/>
+             <Route path="/about" component = {About}/>
+        </Router>
+
+
+嵌套路由
+1.Route组件可以嵌套，即在访问内部route的url时，先加载外层的组件，然后在它的内部再加载内部url对应的组件。
+	<Router history="hashHistory">
+            <Route path="/" compnent={App}/>
+                <Route path="/about" component={About}/>
+            </Route>
+        </Router>
+  父组件的this.props.children属性就是子组件。
+2.子路由也可以不写在Router组件里面，单独传入Router组件的routes属性。
+	let routes = <Route path="/" component={App}/>
+           <Route path="/about" component={About}/>
+         </Route>;
+        <Router routes={routes} history={browserHistory}/>
+
+
+path属性
+1.Route组件的path属性指定路由的匹配规则，这儿属性是可以省略的，这样的话，不管路径是否匹配，总是会加载指定组件。
+
+
+通配符
+1.path属性可以使用通配符
+	<Route path="/hello/:name">
+            匹配 /hello/michael  和 /hello/ryan
+        <Route path="/hello(/:name)">
+            匹配 /hello  /hello/michael  /hello/ryan
+        <Route path="/files/*.*">
+            匹配 /files/hello.jpg  /files/hello.html
+        <Route path="/files/*">
+            匹配 /files/   /files/a   /files/a/b
+        <Route path="/**/*.jpg">
+            匹配 /files/hello.jpg  /files/path/to/file.jpg
+(1):paramName
+匹配URL的一个部分，直到遇到下一个 /、？、#为止，这个路径参数可以通过this.props.params.paramName取出
+(2)()
+()表示URL的这个部分是可选的
+(3)*
+*匹配任意字符，直到模式里面的下一个字符为止。匹配方式是非贪婪模式。
+(4)**
+**匹配任意字符，知道下一个/，？，#为止。匹配方式是贪婪模式。
+
+2.path属性也可以使用相对路径（不以/开头），匹配时就会相对于父组件的路径。嵌套路由如果想摆脱这个规则，可以使用绝对路由。
+3.路由匹配规则是从上到下执行，一旦发现匹配，就不再匹配其余的规则了。例如同一个路径（path），同时匹配两个规则（组件），第二个规则就不会生效。设置路径参数时，需要特别小心这一点。带参数的路径（例如path="/:userName/:id")一般要写在路由规则的底部。
+4.此外，URL的查询字符串/foo?bar=baz,可以用this.props.location.query.bar获取.
+
+
+IndexRoute组件
+1显示指定Home是根路由的子组件，即指定默认情况下加载的子组件。可以吧IndexRoute想象成某个路径的index.html。
+	<Router>
+           <Route path="/" component={App}>
+               <IndexRoute component={Home}/>
+               <Route path="accounts" component={Accounts}/>
+               <Route path="statements" component={Statements}/>
+           </Route>
+        </Router>
+         现在用户访问/的时候，加载的组件结构如下：
+         <App>
+             <Home/>
+         </App>
+	App只包含下级组件的共有元素，本身的展示内容则由Home组件定义。这样有利于代码分离，也有利于使用React Router提供的各种API。
+注意：IndexRoute组件没有路径参数path。
+
+Redirect组件
+<Redirect>组件用于路由的跳转，即用户访问一个路由，会自动跳转到另一个路由。
+	<Route path="inbox" component={Inbox}>
+            <Redirect from="messages/:id" to="/messages/:id"/>
+         </Route>
+         访问/inbox/messages/:id会自动跳转到/messages/:id.
+
+
+IndexRedirect组件
+IndexRedirect组件用于访问根路由的时候，将用户重定向到某个子组件。
+	<Route path="/" component={App}>
+            <IndexRedirect to="/welcome">
+        </Route>
+
+
+Link
+(1)Link组件用于取代<a>元素，生成一个链接，允许用户点击后跳转到另一个路由。他基本上就是<a>元素的React版本，可以接收Router的状态。
+	render:function(){
+             return <div>
+                <ul role="nav">
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/repos">Repos</Link></li>
+                </ul>
+             </div>
+        }
+(2)如果希望当前的路由与其他路由有不同样式，这时可以使用Link组件的activeStyle属性。
+	<Link to="/about" activeStyle={{color:"red"}}>About</Link>  当前页面的链接会红色显示
+(3）另一种做法是，使用activeClassName指定当前路由的Class。
+	<Link to="/about" activeClassName="active">About</Link> 当前页面的链接的class会包含active。
+(4)在Router组件之外，导航到路由页面，可以使用浏览器的History API
+	import {browserHistory} from "react-router";
+        browserHistory.push("/some/path");
+
+IndexLink 
+1.如果链接到根路由/，不要使用Link组件，而要使用IndexLink组件。
+2.对于根路由来说，activeStyle和activeClassName会失效，或者说总是生效，因为/会匹配任何子路由。而IndexLink组件会使用路径的精确匹配。
+	<IndexLink to="/" activeClassName="active">Home</IndexLink>
+        根路由只会在精确匹配时，才具有activeClassName
+另一种方法是使用Link组件的onlyActiveOnIndex属性，也能达到同样效果。
+	<Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link>
+IndexLink就是对Link组件的onlyActiveOnIndex属性的包装。
+
+history属性
+1.Router组件的history属性，用来监听浏览器地址栏的变化，并将URL解析成一个地址对象，供React Router匹配。
+2.history属性，一共可以设置三种值：
+	browserHistory
+	hashHistory
+	createMemoryHistory
+(1)如果设为hashHistory，路由将通过URL的hash部分（#）切换，URL的形式类似example.com/#/some/path
+	import {hashHistory} from "react-router"
+	render(<Router history={hashHistory} routes={routes}/>,document.getElementById("app"))
+(2)如果设为browserHistory，浏览器的路由就不再通过Hash完成了，而显示正常的路径example.com/some/path,背后调用的是浏览器的History API。
+	import {browserHistory} from "react-router";
+	render(<Router history={browserHistory} routes={routes}/>,document.getElementById("app"))
+但是，这种情况需要对服务器改造，否则用户直接向服务器请求某个子路由，会显示网页找不到的404错误。
+如果开发服务器使用的是webpack-dev-server，加上--history-api-fallback参数就可以了。
+	$ webpack-dev-server --inline --content-base . --history-api-fallback
+(3)createMemoryHistory主要用于服务器渲染。它创建一个内存中的history对象，不与浏览器URL互动。
+	const history = createMemoryHistory(location);
+
+
+表单处理
+Link组件用于正常的用户点击跳转，但是有时还需要表单跳转、点击按钮跳转等操作，例如：
+	<form onSubmit={this.handleSubmit}>
+            <input type="text" placeholder="userName"/>
+            <input type="text" placeholder="repo"/>
+            <button type="submit">Go</button>
+         </form>
+1.第一种方法是使用browserHistory.push
+	import {browserHistory} from "react-router"
+        handleSubmit(event){
+           event.preventDefault();
+           const userName=event.target.element[0].value;
+	   const repo = event.target.element[1].value;
+           const path=`/repos/${userName}/${repo}`;
+	   browserHistory.push(path)
+        }
+2.第二种方法是使用context对象
+	export default React.createClass({
+	     contextTypes:{
+		router:React.PropTypes.object
+ 	     },
+	     handleSubmit(event){
+		this.context.router.push(path)
+	     },
+	})
+
+
+路由的钩子
+1.每个路由都有Enter和Leave钩子，用户进入或离开路由时触发
+2.可以使用onEnter钩子替代<Redirect>组件
+	<Route path="inbox" component={inbox}>
+	   <Route 
+		path="message/:id"
+		onEnter={
+		    ({params},replace)=>replace(`/messages/${params.id}`)
+		}
+	   />
+         </Route>
+3.onEnter钩子还可以用来做认证。
+	const requireAuth = （nextState，replace）=>{
+	    if(!auth.isAdmin()){
+		replace({pathname:"/"})
+	     }
+	}
+	export const AdminRoutes=()=>{
+	     return(
+		 <Route path="/admin" component={Admin} onEnter={requireAuth}/>
+	     )
+	}
+4.setRouteLeaveHook方法为Leave钩子指定routerWillLeave函数，如果返回false，将阻止路由的切换，否则就返回一个字符串，提示用户决定是否要切换。
+	const Home = withRouter(
+	   React.createClass({
+		componentDidMount:function(){
+		   this.props.router.setRouteLeaveHook(
+			this.props.route,
+			this.routerWillLeave
+		   )
+		},
+
+		routerWillLeave(nextLocation){
+		    if(!this.state.isSaved){return "确认要离开？"}
+		},
+		
+	   })
+	)
+
+
+
+//基本 使用
+import { createHistory } from 'history'
+
+const history = createHistory()
+
+// 当前的地址
+const location = history.getCurrentLocation()
+
+// 监听当前的地址变换
+const unlisten = history.listen(location => {
+  console.log(location.pathname)
+})
+
+// 将新入口放入历史堆栈
+history.push({
+  pathname: '/the/path',
+  search: '?a=query',
+
+  // 一些不存在url参数上面的当前url的状态值
+  state: { the: 'state' }
+})
+
+// When you're finished, stop the listener
+unlisten()
+
+
+
+push(location)
+replace(location)
+go(n)
+goBack()
+goForward()push(location)
+replace(location)
+go(n)
+goBack()
+goForward()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
